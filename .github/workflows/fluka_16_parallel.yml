@@ -30,24 +30,24 @@ jobs:
       - name: Reassemble & Install FLUKA
         shell: bash
         run: |
-          echo ">>> Reassembling FLUKA Debian package from chunks..."
+          echo ">>> Reassembling FLUKA package..."
           cat packages/fluka_deb.part_* > fluka.deb
           
-          echo ">>> Installing FLUKA and gfortran dependencies..."
+          echo ">>> Installing FLUKA and gfortran..."
           sudo apt-get update -qq
           sudo apt-get install -y -qq gfortran-9 || sudo apt-get install -y -qq gfortran
           sudo dpkg -i --force-depends fluka.deb || sudo apt-get install -f -y -qq
           
-          echo ">>> Verifying FLUKA installation:"
-          which rfluka || ls -lh /usr/local/fluka/bin/ || ls -lh /usr/local/bin/
+          which rfluka || true
 
       - name: Update Primaries in Input Deck
         shell: bash
         run: |
           INP_FILE="inputs/task_${{ matrix.task_id }}/task_${{ matrix.task_id }}.inp"
           if [ -f "$INP_FILE" ]; then
-            sed -i "s/^START.*/START       ${{ inputs.primaries }}.0/" "$INP_FILE"
-            echo "Updated $INP_FILE with ${{ inputs.primaries }} primaries."
+            sed -i "s/^START.*/START, ${{ inputs.primaries }}.0/" "$INP_FILE"
+            echo "Updated $INP_FILE with ${{ inputs.primaries }} primaries:"
+            grep "^START" "$INP_FILE"
           fi
 
       - name: Run FLUKA Simulation (Task ${{ matrix.task_id }})
@@ -56,17 +56,29 @@ jobs:
           TASK_DIR="inputs/task_${{ matrix.task_id }}"
           cd "$TASK_DIR"
           
-          # Add FLUKA bin to PATH
           export PATH="/usr/local/flukagfor/bin:/usr/local/fluka/bin:/usr/local/bin:$PATH"
           export FLUFOR=gfortran
           
           echo ">>> [STARTING] rfluka for task_${{ matrix.task_id }}..."
-          rfluka -N0 -M1 "task_${{ matrix.task_id }}.inp"
+          rfluka -N0 -M1 "task_${{ matrix.task_id }}.inp" || {
+            EXIT_CODE=$?
+            echo "=== FLUKA EXITED WITH CODE $EXIT_CODE ==="
+            echo "--- LISTING RUN DIRECTORY ---"
+            ls -la
+            echo "--- FLUKA RUN LOG ---"
+            cat *001.log 2>/dev/null || true
+            echo "--- FLUKA RUN OUT (LAST 100 LINES) ---"
+            cat *001.out 2>/dev/null | tail -n 100 || true
+            echo "--- FLUKA RUN ERR ---"
+            cat *001.err 2>/dev/null || true
+            exit $EXIT_CODE
+          }
           
           echo ">>> [FINISHED] Output directory contents:"
           ls -lh
 
       - name: Upload Task Output Artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: task_${{ matrix.task_id }}_results
@@ -80,6 +92,7 @@ jobs:
   merge-and-summarize:
     name: Merge Results & Generate Summary
     needs: run-fluka-tasks
+    if: always()
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -98,7 +111,6 @@ jobs:
       - name: Organize Artifacts and Merge Data
         shell: bash
         run: |
-          # Copy outputs back to corresponding inputs/task_XX folders
           for i in $(seq -w 1 16); do
             SRC="downloaded_artifacts/task_${i}_results"
             DST="inputs/task_${i}"
@@ -107,7 +119,6 @@ jobs:
             fi
           done
           
-          # Run Python aggregation script
           python3 merge_and_plot.py
 
       - name: Upload Final Summary Package
