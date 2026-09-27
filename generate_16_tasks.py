@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 generate_16_tasks.py - Sinh 16 file FLUKA input cho bai toan Benchmark theo chuẩn Fixed Format 80-cot của CERN FLUKA.
-Moi the deu duoc kiem tra (assert len == 81 voi newline) de dam bao do dai 80 cot tuyet doi.
+SDUM (cot 71-80) duoc can le trai (left-aligned) chuan xac theo tieu chuan doc ky tu cua Fortran FLUKA.
 """
 
 import os
@@ -26,9 +26,15 @@ def fmt_val(v):
         return f"{s:>10}"
     return f"{str(v):>10}"[:10]
 
+def fmt_sdum(s):
+    """SDUM la chuoi ky tu (character) nen phai duoc can trai tu cot 71"""
+    if s is None or s == "":
+        return " " * 10
+    return f"{str(s):<10}"[:10]
+
 def fluka_card(name, w1="", w2="", w3="", w4="", w5="", w6="", sdum=""):
     """Tao mot the FLUKA chuan 80 cot (10 cot x 8 truong)"""
-    line = f"{name:<10}{fmt_val(w1)}{fmt_val(w2)}{fmt_val(w3)}{fmt_val(w4)}{fmt_val(w5)}{fmt_val(w6)}{fmt_val(sdum)}\n"
+    line = f"{name:<10}{fmt_val(w1)}{fmt_val(w2)}{fmt_val(w3)}{fmt_val(w4)}{fmt_val(w5)}{fmt_val(w6)}{fmt_sdum(sdum)}\n"
     assert len(line) == 81, f"Card length error: len={len(line)} for line: {repr(line)}"
     return line
 
