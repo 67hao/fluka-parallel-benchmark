@@ -1,0 +1,51 @@
+TITLE
+FLUKA 16-Core Parallel Benchmark - Task 07 (Shield 3.5 cm)
+*...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
+DEFAULTS                                                              PRECISIO
+* Beam: 2.614 MeV Photon (tuong duong Tl-208 gamma line)
+BEAM         -0.0026                                                  PHOTON
+BEAMPOS          0.0       0.0     -10.0                              POSITIVE
+* Random Seed doc lap cho moi may ao
+RANDOMIZ         1.0  1613578.0
+*
+GEOBEGIN                                                              COMBNAME
+    0    0          Shielding Benchmark Geometry
+* --- Bodies ---
+* Nguon / Vung chieu
+RPP beamBox    -15.0 15.0 -15.0 15.0 -12.0  -2.0
+* Tam khiên chi voi do day thay doi: z tu 0.0 den 3.5 cm
+RPP shield     -25.0 25.0 -25.0 25.0   0.0  3.5
+* Vung dau do (Detector) dat ngay sau khiên: day 5 cm
+RPP detBox     -10.0 10.0 -10.0 10.0 4.5 9.5
+* Vung khong khi va blackhole
+RPP airBox     -60.0 60.0 -60.0 60.0 -30.0  60.0
+RPP blkBox    -100.0 100.0 -100.0 100.0 -100.0 100.0
+END
+* --- Regions ---
+TARGET       5 +beamBox
+SHIELD       5 +shield
+DETECTOR     5 +detBox
+AIR          5 +airBox -beamBox -shield -detBox
+BLACKHOLE    5 +blkBox -airBox
+END
+GEOEND
+*
+* --- Materials ---
+ASSIGNMA      COPPER    TARGET
+ASSIGNMA        LEAD    SHIELD
+ASSIGNMA    GERMANIU  DETECTOR
+ASSIGNMA         AIR       AIR
+ASSIGNMA    BLCKHOLE BLACKHOLE
+*
+* --- Scoring: USRBIN tinh phan bo lieu nang luong (Dose / Edep) ---
+* Scorer 1: USRBIN tren vung Detector (Z tu 4.5 den 9.5)
+USRBIN          10.0    ENERGY     -40.0      10.0      10.0 9.5DetDose
+USRBIN         -10.0     -10.0 4.5      10.0      10.0      10.0 &
+*
+* Scorer 2: USRTRACK do thong luong photon (Fluence) trong Detector
+USRTRACK         1.0    PHOTON     -41.0  DETECTOR       0.0       1.0DetFlux
+USRTRACK       0.003       0.0     100.0                                  &
+*
+* --- So luong hat: 250,000 hat (task nang, chay mat vai phut moi may ao) ---
+START       250000.0
+STOP

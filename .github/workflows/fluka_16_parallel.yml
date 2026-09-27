@@ -1,0 +1,120 @@
+name: FLUKA 16-Core Parallel Benchmark
+
+on:
+  workflow_dispatch:
+    inputs:
+      primaries:
+        description: 'Số hạt mỗi task (mặc định: 250,000)'
+        required: false
+        default: '250000'
+        type: string
+
+jobs:
+  run-fluka-tasks:
+    name: Run Task ${{ matrix.task_id }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        task_id: [
+          "01", "02", "03", "04",
+          "05", "06", "07", "08",
+          "09", "10", "11", "12",
+          "13", "14", "15", "16"
+        ]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Reassemble & Install FLUKA
+        shell: bash
+        run: |
+          echo ">>> Reassembling FLUKA Debian package from chunks..."
+          cat packages/fluka_deb.part_* > fluka.deb
+          
+          echo ">>> Installing FLUKA and gfortran dependencies..."
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq gfortran-9 || sudo apt-get install -y -qq gfortran
+          sudo dpkg -i --force-depends fluka.deb || sudo apt-get install -f -y -qq
+          
+          echo ">>> Verifying FLUKA installation:"
+          which rfluka || ls -lh /usr/local/fluka/bin/ || ls -lh /usr/local/bin/
+
+      - name: Update Primaries in Input Deck
+        shell: bash
+        run: |
+          INP_FILE="inputs/task_${{ matrix.task_id }}/task_${{ matrix.task_id }}.inp"
+          if [ -f "$INP_FILE" ]; then
+            sed -i "s/^START.*/START       ${{ inputs.primaries }}.0/" "$INP_FILE"
+            echo "Updated $INP_FILE with ${{ inputs.primaries }} primaries."
+          fi
+
+      - name: Run FLUKA Simulation (Task ${{ matrix.task_id }})
+        shell: bash
+        run: |
+          TASK_DIR="inputs/task_${{ matrix.task_id }}"
+          cd "$TASK_DIR"
+          
+          # Add FLUKA bin to PATH
+          export PATH="/usr/local/flukagfor/bin:/usr/local/fluka/bin:/usr/local/bin:$PATH"
+          export FLUFOR=gfortran
+          
+          echo ">>> [STARTING] rfluka for task_${{ matrix.task_id }}..."
+          rfluka -N0 -M1 "task_${{ matrix.task_id }}.inp"
+          
+          echo ">>> [FINISHED] Output directory contents:"
+          ls -lh
+
+      - name: Upload Task Output Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: task_${{ matrix.task_id }}_results
+          path: |
+            inputs/task_${{ matrix.task_id }}/*.lis
+            inputs/task_${{ matrix.task_id }}/*.out
+            inputs/task_${{ matrix.task_id }}/*.log
+            inputs/task_${{ matrix.task_id }}/*fort*
+          retention-days: 7
+
+  merge-and-summarize:
+    name: Merge Results & Generate Summary
+    needs: run-fluka-tasks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Download all Task Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: downloaded_artifacts
+
+      - name: Organize Artifacts and Merge Data
+        shell: bash
+        run: |
+          # Copy outputs back to corresponding inputs/task_XX folders
+          for i in $(seq -w 1 16); do
+            SRC="downloaded_artifacts/task_${i}_results"
+            DST="inputs/task_${i}"
+            if [ -d "$SRC" ]; then
+              cp -r "$SRC"/* "$DST"/ 2>/dev/null || true
+            fi
+          done
+          
+          # Run Python aggregation script
+          python3 merge_and_plot.py
+
+      - name: Upload Final Summary Package
+        uses: actions/upload-artifact@v4
+        with:
+          name: FLUKA_16_TASKS_FINAL_SUMMARY
+          path: |
+            summary_results.csv
+            inputs/
+          retention-days: 14

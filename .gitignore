@@ -1,0 +1,15 @@
+# Simulation outputs
+*.lis
+*.out
+*.log
+*fort*
+*.err
+
+# Python
+__pycache__/
+*.pyc
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
