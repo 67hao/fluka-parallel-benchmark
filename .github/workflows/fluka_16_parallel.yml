@@ -38,19 +38,7 @@ jobs:
           sudo apt-get install -y -qq gfortran-9 libgfortran5
           sudo dpkg -i --force-depends fluka.deb || sudo apt-get install -f -y -qq
           
-          echo ">>> Checking FLUKA dependencies:"
           which rfluka || true
-          ldd /usr/local/fluka/bin/fluka 2>/dev/null || true
-
-      - name: Update Primaries in Input Deck
-        shell: bash
-        run: |
-          INP_FILE="inputs/task_${{ matrix.task_id }}/task_${{ matrix.task_id }}.inp"
-          if [ -f "$INP_FILE" ]; then
-            sed -i "s/^START.*/START, ${{ inputs.primaries }}.0/" "$INP_FILE"
-            echo "Updated $INP_FILE with ${{ inputs.primaries }} primaries:"
-            grep "^START" "$INP_FILE"
-          fi
 
       - name: Run FLUKA Simulation (Task ${{ matrix.task_id }})
         shell: bash
@@ -65,14 +53,13 @@ jobs:
           rfluka -N0 -M1 "task_${{ matrix.task_id }}.inp" || {
             EXIT_CODE=$?
             echo "=== FLUKA EXITED WITH CODE $EXIT_CODE ==="
-            echo "--- LISTING FILES INSIDE TEMP RUN DIRS ---"
+            echo "--- LISTING RUN DIRECTORY ---"
             ls -la
             ls -la fluka_* 2>/dev/null || true
-            echo "--- CHECKING TEMP DIRS CONTENT ---"
             for f in fluka_*/*; do
               if [ -f "$f" ]; then
                 echo "=== FILE: $f ==="
-                cat "$f" | tail -n 60 || true
+                cat "$f" | tail -n 80 || true
               fi
             done
             exit $EXIT_CODE

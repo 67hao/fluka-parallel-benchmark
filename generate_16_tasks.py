@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-generate_16_tasks.py - Sinh 16 file FLUKA input cho bai toan Benchmark truyen qua khiên che chan (Deep Shielding Transport).
-Su dung card GLOBAL ,,,,,, FREE de dam bao 100% dung cu phap FLUKA, khong bi lech cot.
+generate_16_tasks.py - Sinh 16 file FLUKA input cho bai toan Benchmark theo chuẩn Fixed Format 80-cot của CERN FLUKA.
+Moi the deu duoc kiem tra (assert len == 81 voi newline) de dam bao do dai 80 cot tuyet doi.
 """
 
 import os
@@ -10,56 +10,31 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 INPUTS_DIR = os.path.join(BASE_DIR, "inputs")
 os.makedirs(INPUTS_DIR, exist_ok=True)
 
-TEMPLATE_INP = """TITLE
-FLUKA 16-Core Parallel Benchmark - Task {task_id:02d} (Shield {shield_thick:.1f} cm)
-*...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
-* Kich hoat FREE format de phan tach bang dau phay
-GLOBAL, , , , , , FREE
-DEFAULTS, , , , , , PRECISIO
-* Beam: 2.614 MeV Photon (tuong duong Tl-208 gamma line)
-BEAM, -0.0026, , , , , PHOTON
-BEAMPOS, 0.0, 0.0, -10.0, , , POSITIVE
-* Random Seed doc lap cho moi may ao
-RANDOMIZ, 1.0, {seed:.0f}
-*
-GEOBEGIN, , , , , , COMBNAME
-    0    0          Shielding Benchmark Geometry
-* --- Bodies ---
-RPP beamBox, -15.0, 15.0, -15.0, 15.0, -12.0, -2.0
-RPP shield,  -25.0, 25.0, -25.0, 25.0, 0.0, {shield_thick:.2f}
-RPP detBox,  -10.0, 10.0, -10.0, 10.0, {det_z1:.2f}, {det_z2:.2f}
-RPP airBox,  -60.0, 60.0, -60.0, 60.0, -30.0, 60.0
-RPP blkBox,  -100.0, 100.0, -100.0, 100.0, -100.0, 100.0
-END
-* --- Regions ---
-TARGET   5 +beamBox
-SHIELD   5 +shield
-DETECTOR 5 +detBox
-AIR      5 +airBox -beamBox -shield -detBox
-BLKHOLE  5 +blkBox -airBox
-END
-GEOEND
-*
-* --- Materials ---
-ASSIGNMA, COPPER, TARGET
-ASSIGNMA, LEAD, SHIELD
-ASSIGNMA, GERMANIU, DETECTOR
-ASSIGNMA, AIR, AIR
-ASSIGNMA, BLCKHOLE, BLKHOLE
-*
-* --- Scoring: USRTRACK do thong luong photon (Fluence) trong Detector ---
-* Det volume = 20 * 20 * 5 = 2000 cm3, 50 energy bins tu 0 den 3 MeV (0.003 GeV)
-USRTRACK, 1.0, PHOTON, -41.0, DETECTOR, 2000.0, 50.0, DetFlux
-USRTRACK, 0.003, 0.0, , , , , &
-*
-* --- So luong hat: 250,000 hat (task nang, chay mat vai phut moi may ao) ---
-START, {primaries:.1f}
-STOP
-"""
+def fmt_val(v):
+    if v is None or v == "":
+        return " " * 10
+    if isinstance(v, (int, float)):
+        s = f"{v:.4f}"
+        if len(s) > 10:
+            s = f"{v:.2f}"
+        if len(s) > 10:
+            s = f"{v:.1f}"
+        if len(s) > 10:
+            s = f"{v:.0f}."
+        if len(s) > 10:
+            s = f"{v:10.2e}"
+        return f"{s:>10}"
+    return f"{str(v):>10}"[:10]
+
+def fluka_card(name, w1="", w2="", w3="", w4="", w5="", w6="", sdum=""):
+    """Tao mot the FLUKA chuan 80 cot (10 cot x 8 truong)"""
+    line = f"{name:<10}{fmt_val(w1)}{fmt_val(w2)}{fmt_val(w3)}{fmt_val(w4)}{fmt_val(w5)}{fmt_val(w6)}{fmt_val(sdum)}\n"
+    assert len(line) == 81, f"Card length error: len={len(line)} for line: {repr(line)}"
+    return line
 
 def generate_tasks(num_tasks=16, primaries=250000):
     print("=" * 68)
-    print(f"  SINH {num_tasks} TASKS MO PHONG FLUKA BENCHMARK (FREE FORMAT)")
+    print(f"  SINH {num_tasks} TASKS FLUKA CHUAN FIXED FORMAT (EXACT 80-COLS)")
     print(f"  So hat moi task : {primaries:,} primaries")
     print("=" * 68)
 
@@ -71,25 +46,56 @@ def generate_tasks(num_tasks=16, primaries=250000):
         shield_thick = 0.5 + (i - 1) * 0.5
         det_z1 = shield_thick + 1.0
         det_z2 = det_z1 + 5.0
-
         seed = 1000000.0 + i * 87654.0
 
-        content = TEMPLATE_INP.format(
-            task_id=i,
-            shield_thick=shield_thick,
-            det_z1=det_z1,
-            det_z2=det_z2,
-            seed=seed,
-            primaries=float(primaries)
-        )
+        lines = []
+        lines.append("TITLE\n")
+        lines.append(f"FLUKA 16-Task Benchmark - Task {i:02d} (Lead Shield {shield_thick:.1f} cm)\n")
+        lines.append("*...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8\n")
+        lines.append(fluka_card("DEFAULTS", sdum="PRECISIO"))
+        lines.append(fluka_card("BEAM", -0.0026, sdum="PHOTON"))
+        lines.append(fluka_card("BEAMPOS", 0.0, 0.0, -10.0, sdum="POSITIVE"))
+        lines.append(fluka_card("RANDOMIZ", 1.0, seed))
+        
+        # Geometry
+        lines.append(fluka_card("GEOBEGIN", sdum="COMBNAME"))
+        lines.append("    0    0          Shielding Benchmark Geometry\n")
+        lines.append(f"RPP {'beamBox':<8}{'-15.0':>10}{'15.0':>10}{'-15.0':>10}{'15.0':>10}{'-12.0':>10}{'-2.0':>10}\n")
+        lines.append(f"RPP {'shield':<8}{'-25.0':>10}{'25.0':>10}{'-25.0':>10}{'25.0':>10}{'0.0':>10}{shield_thick:>10.2f}\n")
+        lines.append(f"RPP {'detBox':<8}{'-10.0':>10}{'10.0':>10}{'-10.0':>10}{'10.0':>10}{det_z1:>10.2f}{det_z2:>10.2f}\n")
+        lines.append(f"RPP {'airBox':<8}{'-60.0':>10}{'60.0':>10}{'-60.0':>10}{'60.0':>10}{'-30.0':>10}{'60.0':>10}\n")
+        lines.append(f"RPP {'blkBox':<8}{'-100.0':>10}{'100.0':>10}{'-100.0':>10}{'100.0':>10}{'-100.0':>10}{'100.0':>10}\n")
+        lines.append("END\n")
+        lines.append("TARGET   5 +beamBox\n")
+        lines.append("SHIELD   5 +shield\n")
+        lines.append("DETECTOR 5 +detBox\n")
+        lines.append("AIR      5 +airBox -beamBox -shield -detBox\n")
+        lines.append("BLKHOLE  5 +blkBox -airBox\n")
+        lines.append("END\n")
+        lines.append(fluka_card("GEOEND"))
+        
+        # Materials
+        lines.append(fluka_card("ASSIGNMA", "COPPER", "TARGET"))
+        lines.append(fluka_card("ASSIGNMA", "LEAD", "SHIELD"))
+        lines.append(fluka_card("ASSIGNMA", "GERMANIU", "DETECTOR"))
+        lines.append(fluka_card("ASSIGNMA", "AIR", "AIR"))
+        lines.append(fluka_card("ASSIGNMA", "BLCKHOLE", "BLKHOLE"))
+        
+        # Scorer
+        lines.append(fluka_card("USRTRACK", 1.0, "PHOTON", -41.0, "DETECTOR", 2000.0, 50.0, sdum="DetFlux"))
+        lines.append(fluka_card("USRTRACK", 0.003, 0.0, sdum="&"))
+        
+        # Primaries
+        lines.append(fluka_card("START", primaries))
+        lines.append(fluka_card("STOP"))
 
         inp_path = os.path.join(task_dir, f"{task_name}.inp")
         with open(inp_path, "w", encoding="utf-8") as f:
-            f.write(content)
+            f.writelines(lines)
 
-        print(f"  [Task {i:02d}] Shield: {shield_thick:4.1f} cm | Seed: {seed:.0f} -> {inp_path}")
+        print(f"  [Task {i:02d}] Shield: {shield_thick:4.1f} cm -> {inp_path}")
 
-    print("\n>>> Da sinh thanh cong 16 tasks trong thu muc inputs/!")
+    print("\n>>> Da sinh xong 16 file FLUKA chuan fixed-format 80-cot!")
 
 if __name__ == "__main__":
     generate_tasks(16, 250000)
