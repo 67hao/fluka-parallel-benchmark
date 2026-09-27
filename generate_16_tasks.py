@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 generate_16_tasks.py - Sinh 16 file FLUKA input cho bai toan Benchmark theo chuẩn Fixed Format 80-cot của CERN FLUKA.
-Them the MATERIAL cho GERMANIU voi WHAT(2) = 0.0 (blank) theo tieu chuan FLUKA 4 de FLUKA tu lay nguyen tu luong tu nhien.
+Them card LOW-PWXS WHAT(1)=-1.0 de tat pointwise neutron transport (khong can tai thu vien neutron nang nhe).
 """
 
 import os
@@ -58,8 +58,9 @@ def generate_tasks(num_tasks=16, primaries=250000):
         lines.append(f"FLUKA 16-Task Benchmark - Task {i:02d} (Lead Shield {shield_thick:.1f} cm)\n")
         lines.append("*...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8\n")
         lines.append(fluka_card("DEFAULTS", sdum="PRECISIO"))
+        # Tat pointwise neutron library requirement vi day la mo phong photon
+        lines.append(fluka_card("LOW-PWXS", -1.0))
         lines.append(fluka_card("BEAM", -0.0026, sdum="PHOTON"))
-        # BEAMPOS SDUM blank = chieu theo +z
         lines.append(fluka_card("BEAMPOS", 0.0, 0.0, -10.0))
         lines.append(fluka_card("RANDOMIZ", 1.0, seed))
         
