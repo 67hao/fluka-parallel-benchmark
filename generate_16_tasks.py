@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 generate_16_tasks.py - Sinh 16 file FLUKA input cho bai toan Benchmark theo chuẩn Fixed Format 80-cot của CERN FLUKA.
-Them the MATERIAL dinh nghia GERMANIU (Z=32, A=72.59, rho=5.323 g/cm3) de ASSIGNMA nhan dien duoc.
+Them the MATERIAL cho GERMANIU voi WHAT(2) = 0.0 (blank) theo tieu chuan FLUKA 4 de FLUKA tu lay nguyen tu luong tu nhien.
 """
 
 import os
@@ -80,8 +80,8 @@ def generate_tasks(num_tasks=16, primaries=250000):
         lines.append("END\n")
         lines.append(fluka_card("GEOEND"))
         
-        # Materials: Dinh nghia vat lieu GERMANIU cho dau do
-        lines.append(fluka_card("MATERIAL", 32.0, 72.59, 5.323, sdum="GERMANIU"))
+        # Materials: FLUKA 4 quy dinh WHAT(2) de trong de dung nguyen tu luong mac dinh
+        lines.append(fluka_card("MATERIAL", 32.0, "", 5.323, sdum="GERMANIU"))
         lines.append(fluka_card("ASSIGNMA", "COPPER", "TARGET"))
         lines.append(fluka_card("ASSIGNMA", "LEAD", "SHIELD"))
         lines.append(fluka_card("ASSIGNMA", "GERMANIU", "DETECTOR"))
