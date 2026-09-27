@@ -20,6 +20,7 @@ AIR      5 +airBox -beamBox -shield -detBox
 BLKHOLE  5 +blkBox -airBox
 END
 GEOEND                                                                          
+MATERIAL     32.0000   72.5900    5.3230                              GERMANIU  
 ASSIGNMA      COPPER    TARGET                                                  
 ASSIGNMA        LEAD    SHIELD                                                  
 ASSIGNMA    GERMANIU  DETECTOR                                                  
