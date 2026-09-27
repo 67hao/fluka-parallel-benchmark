@@ -3,7 +3,7 @@ FLUKA 16-Task Benchmark - Task 09 (Lead Shield 4.5 cm)
 *...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
 DEFAULTS                                                              PRECISIO  
 BEAM         -0.0026                                                  PHOTON    
-BEAMPOS       0.0000    0.0000  -10.0000                              POSITIVE  
+BEAMPOS       0.0000    0.0000  -10.0000                                        
 RANDOMIZ      1.00001788886.00                                                  
 GEOBEGIN                                                              COMBNAME  
     0    0          Shielding Benchmark Geometry

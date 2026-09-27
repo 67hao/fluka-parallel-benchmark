@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 generate_16_tasks.py - Sinh 16 file FLUKA input cho bai toan Benchmark theo chuẩn Fixed Format 80-cot của CERN FLUKA.
-SDUM (cot 71-80) duoc can le trai (left-aligned) chuan xac theo tieu chuan doc ky tu cua Fortran FLUKA.
+BEAMPOS de trong SDUM (SDUM = blank nghia la chieu tia theo chieu duong truc Z).
 """
 
 import os
@@ -27,7 +27,6 @@ def fmt_val(v):
     return f"{str(v):>10}"[:10]
 
 def fmt_sdum(s):
-    """SDUM la chuoi ky tu (character) nen phai duoc can trai tu cot 71"""
     if s is None or s == "":
         return " " * 10
     return f"{str(s):<10}"[:10]
@@ -60,7 +59,8 @@ def generate_tasks(num_tasks=16, primaries=250000):
         lines.append("*...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8\n")
         lines.append(fluka_card("DEFAULTS", sdum="PRECISIO"))
         lines.append(fluka_card("BEAM", -0.0026, sdum="PHOTON"))
-        lines.append(fluka_card("BEAMPOS", 0.0, 0.0, -10.0, sdum="POSITIVE"))
+        # BEAMPOS SDUM blank = chieu theo +z
+        lines.append(fluka_card("BEAMPOS", 0.0, 0.0, -10.0))
         lines.append(fluka_card("RANDOMIZ", 1.0, seed))
         
         # Geometry
