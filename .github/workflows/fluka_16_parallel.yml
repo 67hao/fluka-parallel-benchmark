@@ -12,7 +12,7 @@ on:
 jobs:
   run-fluka-tasks:
     name: Run Task ${{ matrix.task_id }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix:
@@ -33,12 +33,14 @@ jobs:
           echo ">>> Reassembling FLUKA package..."
           cat packages/fluka_deb.part_* > fluka.deb
           
-          echo ">>> Installing FLUKA and gfortran..."
+          echo ">>> Installing gfortran-9 and dependencies..."
           sudo apt-get update -qq
-          sudo apt-get install -y -qq gfortran-9 || sudo apt-get install -y -qq gfortran
+          sudo apt-get install -y -qq gfortran-9 libgfortran5
           sudo dpkg -i --force-depends fluka.deb || sudo apt-get install -f -y -qq
           
+          echo ">>> Checking FLUKA dependencies:"
           which rfluka || true
+          ldd /usr/local/fluka/bin/fluka 2>/dev/null || true
 
       - name: Update Primaries in Input Deck
         shell: bash
@@ -63,14 +65,16 @@ jobs:
           rfluka -N0 -M1 "task_${{ matrix.task_id }}.inp" || {
             EXIT_CODE=$?
             echo "=== FLUKA EXITED WITH CODE $EXIT_CODE ==="
-            echo "--- LISTING RUN DIRECTORY ---"
+            echo "--- LISTING FILES INSIDE TEMP RUN DIRS ---"
             ls -la
-            echo "--- FLUKA RUN LOG ---"
-            cat *001.log 2>/dev/null || true
-            echo "--- FLUKA RUN OUT (LAST 100 LINES) ---"
-            cat *001.out 2>/dev/null | tail -n 100 || true
-            echo "--- FLUKA RUN ERR ---"
-            cat *001.err 2>/dev/null || true
+            ls -la fluka_* 2>/dev/null || true
+            echo "--- CHECKING TEMP DIRS CONTENT ---"
+            for f in fluka_*/*; do
+              if [ -f "$f" ]; then
+                echo "=== FILE: $f ==="
+                cat "$f" | tail -n 60 || true
+              fi
+            done
             exit $EXIT_CODE
           }
           
@@ -93,7 +97,7 @@ jobs:
     name: Merge Results & Generate Summary
     needs: run-fluka-tasks
     if: always()
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
