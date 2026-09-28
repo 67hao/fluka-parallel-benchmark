@@ -171,3 +171,38 @@ jobs:
             user_run/*fort*
             user_run/run_fluka.inp
           retention-days: 14
+
+      - name: Upload Results Directly to Google Drive
+        if: always()
+        env:
+          GDRIVE_OAUTH_JSON: ${{ secrets.GDRIVE_OAUTH_JSON }}
+          GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
+        run: |
+          pip install --quiet google-api-python-client google-auth
+          python3 -c "
+          import os, glob, json
+          from google.oauth2.credentials import Credentials
+          from googleapiclient.discovery import build
+          from googleapiclient.http import MediaFileUpload
+
+          if 'GDRIVE_OAUTH_JSON' not in os.environ or not os.environ['GDRIVE_OAUTH_JSON']:
+              print('No GDRIVE_OAUTH_JSON secret found, skipping drive upload.')
+              exit(0)
+
+          oauth_info = json.loads(os.environ['GDRIVE_OAUTH_JSON'])
+          creds = Credentials.from_authorized_user_info(oauth_info)
+          service = build('drive', 'v3', credentials=creds)
+          folder_id = os.environ.get('GDRIVE_FOLDER_ID', '1Q3KE3Ncfm-Nn6FIbGhFXs25HFIq-InOn')
+
+          files_to_upload = glob.glob('user_run/*.out') + glob.glob('user_run/*.lis') + glob.glob('user_run/*fort*')
+
+          print(f'>>> Uploading {len(files_to_upload)} files to Google Drive folder {folder_id}...')
+          for fp in files_to_upload:
+              fn = os.path.basename(fp)
+              meta = {'name': fn, 'parents': [folder_id]}
+              media = MediaFileUpload(fp, resumable=True)
+              res = service.files().create(body=meta, media_body=media, fields='id, name').execute()
+              print(f' -> Uploaded: {res.get(\"name\")} (ID: {res.get(\"id\")})')
+          print('>>> Google Drive upload finished successfully!')
+          "
+
