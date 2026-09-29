@@ -248,29 +248,38 @@ def main():
         else:
             print(f"    -> LOI THIEU FILE OUT! Tail log: {(res.stderr or res.stdout)[-300:]}")
 
-        # Dong bo len Drive sau moi 5 job
-        if len(batch_outs) >= 10:
+        # Dong bo len Drive sau moi 2 job
+        if len(batch_outs) >= 4:
             if drive_service and "03_Simulation_Outputs" in folder_ids:
-                zip_path = work_dir / f"outputs_runner_{args.runner_id:02d}_batch_{batch_idx:03d}.zip"
-                with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
-                    for out_file in batch_outs:
-                        z.write(out_file, arcname=out_file.name)
-                gdrive_helper.upload_file_to_folder(drive_service, str(zip_path), folder_ids["03_Simulation_Outputs"])
-                gdrive_helper.upload_file_to_folder(drive_service, str(csv_file), folder_ids["02_Flux_Data"])
-                print(f">>> [SYNC] Da dong bo Batch #{batch_idx} len Google Drive!")
-                batch_outs = []
-                batch_idx += 1
+                try:
+                    zip_path = work_dir / f"outputs_runner_{args.runner_id:02d}_batch_{batch_idx:03d}.zip"
+                    with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
+                        for out_file in batch_outs:
+                            z.write(out_file, arcname=out_file.name)
+                    gdrive_helper.upload_file_to_folder(drive_service, str(zip_path), folder_ids["03_Simulation_Outputs"])
+                    gdrive_helper.upload_file_to_folder(drive_service, str(csv_file), folder_ids["02_Flux_Data"])
+                    print(f">>> [SYNC] Da dong bo Batch #{batch_idx} len Google Drive!")
+                    batch_outs = []
+                    batch_idx += 1
+                except Exception as e:
+                    print(f">>> [CANH BAO SYNC] Loi dong bo Drive: {e}, bo qua va tiep tuc chay.")
 
     # Dong bo phan con lai cuoi cung
     if batch_outs and drive_service and "03_Simulation_Outputs" in folder_ids:
-        zip_path = work_dir / f"outputs_runner_{args.runner_id:02d}_batch_{batch_idx:03d}.zip"
-        with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
-            for out_file in batch_outs:
-                z.write(out_file, arcname=out_file.name)
-        gdrive_helper.upload_file_to_folder(drive_service, str(zip_path), folder_ids["03_Simulation_Outputs"])
+        try:
+            zip_path = work_dir / f"outputs_runner_{args.runner_id:02d}_batch_{batch_idx:03d}.zip"
+            with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
+                for out_file in batch_outs:
+                    z.write(out_file, arcname=out_file.name)
+            gdrive_helper.upload_file_to_folder(drive_service, str(zip_path), folder_ids["03_Simulation_Outputs"])
+        except Exception as e:
+            print(f">>> [CANH BAO FINAL SYNC]: {e}")
 
     if drive_service and "02_Flux_Data" in folder_ids and csv_file.exists():
-        gdrive_helper.upload_file_to_folder(drive_service, str(csv_file), folder_ids["02_Flux_Data"])
+        try:
+            gdrive_helper.upload_file_to_folder(drive_service, str(csv_file), folder_ids["02_Flux_Data"])
+        except Exception as e:
+            print(f">>> [CANH BAO FINAL CSV]: {e}")
 
     total_time = time.time() - start_all
     summary_text = f"""=======================================================
@@ -282,7 +291,10 @@ File ket qua flux: {csv_file.name}
 """
     timing_log.write_text(summary_text, encoding="utf-8")
     if drive_service and "05_Execution_Logs_and_Benchmarks" in folder_ids:
-        gdrive_helper.upload_file_to_folder(drive_service, str(timing_log), folder_ids["05_Execution_Logs_and_Benchmarks"])
+        try:
+            gdrive_helper.upload_file_to_folder(drive_service, str(timing_log), folder_ids["05_Execution_Logs_and_Benchmarks"])
+        except Exception as e:
+            pass
 
     print(summary_text)
 

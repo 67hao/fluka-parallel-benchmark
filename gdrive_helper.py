@@ -57,28 +57,37 @@ def get_or_create_subfolders(service, parent_id: str = None):
             folder_ids[sf] = created["id"]
     return folder_ids
 
-def upload_file_to_folder(service, local_path: str, target_folder_id: str, target_name: str = None):
+def upload_file_to_folder(service, local_path: str, target_folder_id: str, target_name: str = None, max_retries: int = 5):
     p = Path(local_path)
     if not p.exists():
-        raise FileNotFoundError(f"{local_path} khong ton tai")
+        print(f"Bo qua upload: {local_path} khong ton tai")
+        return None
     name = target_name or p.name
 
-    # Neu da co file cung ten thi xoa de ghi de
-    q = f"'{target_folder_id}' in parents and name = '{name}' and trashed = false"
-    old_files = service.files().list(q=q, fields="files(id)").execute().get("files", [])
-    for old in old_files:
+    import time
+    for attempt in range(1, max_retries + 1):
         try:
-            service.files().delete(fileId=old["id"]).execute()
-        except Exception:
-            pass
+            # Neu da co file cung ten thi xoa de ghi de
+            q = f"'{target_folder_id}' in parents and name = '{name}' and trashed = false"
+            old_files = service.files().list(q=q, fields="files(id)").execute().get("files", [])
+            for old in old_files:
+                try:
+                    service.files().delete(fileId=old["id"]).execute()
+                except Exception:
+                    pass
 
-    meta = {
-        "name": name,
-        "parents": [target_folder_id]
-    }
-    media = MediaFileUpload(str(p), resumable=True)
-    f = service.files().create(body=meta, media_body=media, fields="id, name, webViewLink").execute()
-    return f
+            meta = {
+                "name": name,
+                "parents": [target_folder_id]
+            }
+            media = MediaFileUpload(str(p), resumable=True)
+            f = service.files().create(body=meta, media_body=media, fields="id, name, webViewLink").execute()
+            return f
+        except Exception as e:
+            print(f"Canh bao upload {name} (lan {attempt}/{max_retries}): {e}")
+            time.sleep(3 * attempt)
+    print(f"Khong the upload {name} sau {max_retries} lan thu, giu lai local.")
+    return None
 
 def get_completed_jobs_from_drive(service, flux_folder_id: str) -> set:
     """Quet toan bo file flux_runner_*.csv hoac flux_all.csv tren Drive de lay danh sach job da chay xong."""
