@@ -13,8 +13,21 @@ from pathlib import Path
 import pandas as pd
 
 from generate_inputs import _parse_thickness_list, _fmt_thickness, SAMPLE_TEMPLATE, BLANK_TEMPLATE, COMPOSITION, DENSITY, format_material
-from parse_results import parse_track_flux
 import gdrive_helper
+
+def parse_track_flux(filepath: Path) -> tuple:
+    """Doc file T-Track (F4 equivalent) trong vung detector (reg 104), tra ve (flux, r_err)."""
+    lines = filepath.read_text(encoding="utf-8", errors="ignore").splitlines()
+    for line in lines:
+        parts = line.strip().split()
+        if len(parts) >= 5 and parts[0] == "1" and parts[1] == "104":
+            try:
+                flux = float(parts[-2])
+                err = float(parts[-1])
+                return flux, err
+            except ValueError:
+                pass
+    raise ValueError(f"Khong tim thay du lieu flux vung reg 104 trong {filepath}")
 
 def parse_args():
     parser = argparse.ArgumentParser(description="PHITS Parallel Worker")
