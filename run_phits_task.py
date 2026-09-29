@@ -198,11 +198,12 @@ def main():
         return
 
     # 6. Thuc thi tung job
-    csv_file = work_dir / f"flux_runner_{args.runner_id:02d}.csv"
+    sample_tag = f"{args.sample_filter.upper()}_" if args.sample_filter.lower() != "all" else ""
+    csv_file = work_dir / f"flux_runner_{sample_tag}{args.runner_id:02d}.csv"
     if not csv_file.exists():
         csv_file.write_text("job_name,energy_mev,sample,thickness_cm,peak_flux,peak_err,total_flux,total_err,elapsed_s\n", encoding="utf-8")
 
-    timing_log = work_dir / f"benchmark_timing_runner_{args.runner_id:02d}.txt"
+    timing_log = work_dir / f"benchmark_timing_runner_{sample_tag}{args.runner_id:02d}.txt"
     start_all = time.time()
     batch_outs = []
     batch_idx = 1
@@ -252,7 +253,7 @@ def main():
         if len(batch_outs) >= 4:
             if drive_service and "03_Simulation_Outputs" in folder_ids:
                 try:
-                    zip_path = work_dir / f"outputs_runner_{args.runner_id:02d}_batch_{batch_idx:03d}.zip"
+                    zip_path = work_dir / f"outputs_runner_{sample_tag}{args.runner_id:02d}_batch_{batch_idx:03d}.zip"
                     with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
                         for out_file in batch_outs:
                             z.write(out_file, arcname=out_file.name)
@@ -267,7 +268,7 @@ def main():
     # Dong bo phan con lai cuoi cung
     if batch_outs and drive_service and "03_Simulation_Outputs" in folder_ids:
         try:
-            zip_path = work_dir / f"outputs_runner_{args.runner_id:02d}_batch_{batch_idx:03d}.zip"
+            zip_path = work_dir / f"outputs_runner_{sample_tag}{args.runner_id:02d}_batch_{batch_idx:03d}.zip"
             with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
                 for out_file in batch_outs:
                     z.write(out_file, arcname=out_file.name)
