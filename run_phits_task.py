@@ -41,21 +41,20 @@ def parse_args():
     parser.add_argument("--timeout-hours", type=float, default=5.4, help="Thoi gian chay toi da truoc khi chu dong checkpoint va thoat an toan")
     return parser.parse_args()
 
-def setup_phits_environment(tar_path: Path, target_dir: Path) -> Path:
+def setup_phits_environment(tar_path: Path, target_dir: Path) -> tuple:
     target_dir.mkdir(parents=True, exist_ok=True)
     phits_bin = target_dir / "phits"
     if not phits_bin.exists():
         print(f">>> [SETUP] Dang giai nen goi PHITS tu {tar_path}...")
         subprocess.run(["tar", "-zxf", str(tar_path), "-C", str(target_dir)], check=True)
         if not phits_bin.exists():
-            # Tim file binary phits
             matches = list(target_dir.rglob("phits"))
             if matches:
                 phits_bin = matches[0]
         subprocess.run(["chmod", "+x", str(phits_bin)], check=True)
     
     print(f">>> [SETUP] PHITS binary san sang tai: {phits_bin}")
-    return phits_bin
+    return phits_bin, target_dir
 
 def build_job_list(excel_path: str, output_base: Path, sample_filter: str, omp: int, maxcas: int):
     df = pd.read_excel(excel_path)
@@ -165,7 +164,7 @@ def main():
     work_dir.mkdir(parents=True, exist_ok=True)
     
     # 1. Setup PHITS bin
-    phits_bin = setup_phits_environment(Path(args.package_path), work_dir / "bin")
+    phits_bin, phits_root = setup_phits_environment(Path(args.package_path), work_dir / "bin")
 
     # 2. Ket noi Google Drive
     drive_service = None
@@ -223,6 +222,7 @@ def main():
         t0 = time.time()
         
         env = os.environ.copy()
+        env["PHITSPATH"] = str(phits_root)
         env["OMP_NUM_THREADS"] = str(args.omp)
         
         cmd = f'"{phits_bin}" < "{jinp.name}"'
