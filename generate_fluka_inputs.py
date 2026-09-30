@@ -69,20 +69,19 @@ def fmt10(val) -> str:
     if val == "" or val is None:
         return " " * 10
     if isinstance(val, (int, float)):
-        if val == 0:
+        if val == 0 or val == 0.0:
             return "       0.0"
-        if isinstance(val, int) or val == int(val):
-            s = f"{int(val):10d}"
-            if len(s) == 10:
-                return s
-        if abs(val) < 0.01 or abs(val) >= 10000:
-            s = f"{val:10.3E}"
-            if len(s) == 10:
-                return s
-        for f_s in [f"{val:10.5f}", f"{val:10.4f}", f"{val:10.3f}"]:
+        val_f = float(val)
+        if abs(val_f) < 0.01 or abs(val_f) >= 100000:
+            s = f"{val_f:10.3E}"
+            return f"{s:>10}"[:10]
+        if val_f == int(val_f):
+            s = f"{val_f:10.1f}"
+            return f"{s:>10}"[:10]
+        for f_s in [f"{val_f:10.5f}", f"{val_f:10.4f}", f"{val_f:10.3f}", f"{val_f:10.2f}", f"{val_f:10.1f}"]:
             if len(f_s) == 10:
                 return f_s
-        s = f"{val:10.3E}"
+        s = f"{val_f:10.3E}"
         return f"{s:>10}"[:10]
     return f"{str(val):>10}"[:10]
 
@@ -107,7 +106,10 @@ def generate_fluka_input(job_name: str, mat_key: str, energy_kev: float, thickne
     th_title_str = f"{thickness_cm:.4f}".rstrip("0").rstrip(".")
     lines.append(f"Paper 1 Benchmark FLUKA - {mat_upper} @ {energy_kev} keV, th={th_title_str} cm\n")
     lines.append("*\n")
-    lines.append(card("DEFAULTS", sdum="PRECISIO"))
+    lines.append(card("DEFAULTS", sdum="EM-CASCA"))
+    lines.append(card("EMFRAY", 1.0))
+    lines.append(card("EMFFLUO", 1.0))
+    lines.append(card("DISCARD", "NEUTRON"))
     lines.append("*\n")
     lines.append(f"* Nguon photon {energy_kev} keV ({e_gev:.6E} GeV) huong doc truc +z\n")
     lines.append(card("BEAM", -e_gev, sdum="PHOTON"))
