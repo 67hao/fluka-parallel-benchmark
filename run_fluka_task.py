@@ -11,7 +11,9 @@ import zipfile
 import subprocess
 import re
 import struct
+import random
 from pathlib import Path
+from decimal import Decimal
 import pandas as pd
 
 try:
@@ -240,6 +242,11 @@ def main():
     work_dir = Path("/tmp/fluka_work")
     work_dir.mkdir(parents=True, exist_ok=True)
 
+    # Startup jitter de tranh 180 runner tan cong Drive cung luc
+    startup_delay = random.uniform(1.0, 15.0)
+    print(f">>> [STARTUP] Cho ngau nhien {startup_delay:.1f}s truoc khi ket noi...")
+    time.sleep(startup_delay)
+
     drive_service = None
     folder_ids = {}
     try:
@@ -250,11 +257,27 @@ def main():
     except Exception as e:
         print(f">>> [CANH BAO] Khong the ket noi Google Drive: {e}. Luu local.")
 
+    sample_tag = f"{args.sample_filter.upper()}_" if args.sample_filter.lower() != "all" else ""
+    csv_filename = f"flux_runner_{sample_tag}{args.runner_id:02d}.csv"
+    csv_file = work_dir / csv_filename
+
     completed_jobs = set()
     if drive_service and "02_Flux_Data" in folder_ids:
-        print(">>> [RESUME] Dang kiem tra cac job FLUKA da hoan thanh tren Drive...")
-        completed_jobs = gdrive_helper.get_completed_jobs_from_drive(drive_service, folder_ids["02_Flux_Data"])
+        print(f">>> [RESUME] Dang kiem tra cac job da xong cua runner nay tren Drive ({csv_filename})...")
+        completed_jobs = gdrive_helper.get_completed_jobs_from_drive(drive_service, folder_ids["02_Flux_Data"], target_filename=csv_filename)
         print(f">>> [RESUME] Tim thay {len(completed_jobs)} job FLUKA da hoan thanh tren Drive.")
+
+    if csv_file.exists():
+        try:
+            df_local = pd.read_csv(csv_file)
+            if "job_name" in df_local.columns:
+                local_done = set(df_local["job_name"].dropna().astype(str).tolist())
+                completed_jobs.update(local_done)
+                print(f">>> [RESUME LOCAL] Doc duoc them {len(local_done)} job tu local CSV.")
+        except Exception:
+            pass
+    else:
+        csv_file.write_text("job_name,energy_mev,sample,thickness_cm,peak_flux,peak_err,total_flux,total_err,elapsed_s\n", encoding="utf-8")
 
     inputs_base = work_dir / "inputs"
     all_jobs = build_fluka_job_list(args.excel_table, inputs_base, args.sample_filter, args.primaries)
@@ -267,11 +290,6 @@ def main():
     if not todo_jobs:
         print(f">>> [HOAN THANH] Toan bo {len(my_jobs)} job cua Runner #{args.runner_id} da xong tren Drive! Thoat.")
         return
-
-    sample_tag = f"{args.sample_filter.upper()}_" if args.sample_filter.lower() != "all" else ""
-    csv_file = work_dir / f"flux_runner_{sample_tag}{args.runner_id:02d}.csv"
-    if not csv_file.exists():
-        csv_file.write_text("job_name,energy_mev,sample,thickness_cm,peak_flux,peak_err,total_flux,total_err,elapsed_s\n", encoding="utf-8")
 
     timing_log = work_dir / f"benchmark_timing_runner_{sample_tag}{args.runner_id:02d}.txt"
     start_all = time.time()
