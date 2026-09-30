@@ -137,12 +137,9 @@ def generate_fluka_input(job_name: str, mat_key: str, energy_kev: float, thickne
     lines.append("GEOEND\n")
     lines.append("*\n")
 
-    # Dinh nghia cac nguyen to co ban chua co san trong FLUKA
+    # Dinh nghia cac nguyen to chua co san trong FLUKA (Gadolinium Z=64)
     lines.append("* Dinh nghia nguyen to vat lieu\n")
-    lines.append(card("MATERIAL", 3.0, 6.941, 0.534, sdum="LITHIUM"))
-    lines.append(card("MATERIAL", 5.0, 10.811, 2.34, sdum="BORON"))
-    lines.append(card("MATERIAL", 20.0, 40.078, 1.55, sdum="CALCIUM"))
-    lines.append(card("MATERIAL", 64.0, 157.25, 7.90, sdum="GADOLINI"))
+    lines.append(card("MATERIAL", 64.0, -157.25, 7.90, sdum="GADOLINI"))
     lines.append("*\n")
 
     # Dinh nghia mau thuy tinh
