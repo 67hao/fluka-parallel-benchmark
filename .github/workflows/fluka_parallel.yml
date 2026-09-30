@@ -54,7 +54,9 @@ jobs:
           sudo apt-get install -y -qq gfortran-9 libgfortran5
           sudo dpkg -i --force-depends fluka.deb || sudo apt-get install -f -y -qq
           
+          echo ">>> [CHECK] Checking rfluka binary location..."
           which rfluka || true
+          ls -la /usr/local/fluka/bin || true
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -70,10 +72,10 @@ jobs:
         env:
           GDRIVE_OAUTH_JSON: ${{ secrets.GDRIVE_OAUTH_JSON }}
           GDRIVE_FOLDER_ID: ${{ github.event.inputs.gdrive_folder }}
-          FLUPRO: /usr/local/flukagfor
+          FLUPRO: /usr/local/fluka
           FLUFOR: gfortran
         run: |
-          export PATH="/usr/local/flukagfor/bin:/usr/local/flukagfor/flutil:/usr/local/bin:$PATH"
+          export PATH="/usr/local/fluka/bin:/usr/local/fluka/flutil:/usr/local/flukagfor/bin:/usr/local/bin:$PATH"
           python3 run_fluka_task.py \
             --runner-id ${{ matrix.runner_id }} \
             --num-runners 20 \

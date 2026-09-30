@@ -14,8 +14,42 @@ import struct
 from pathlib import Path
 import pandas as pd
 
+try:
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+    sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+except Exception:
+    pass
+
 import gdrive_helper
 from generate_fluka_inputs import generate_fluka_input, _parse_thickness_list, COMPOSITION
+
+def find_fluka_binaries():
+    candidates = [
+        "/usr/local/fluka/bin",
+        "/usr/local/fluka/flutil",
+        "/usr/local/flukagfor/bin",
+        "/usr/local/flukagfor/flutil",
+        "/usr/local/bin",
+        "/usr/bin"
+    ]
+    rfluka = shutil.which("rfluka")
+    ustsuw = shutil.which("ustsuw")
+    for c in candidates:
+        if not rfluka and os.path.exists(f"{c}/rfluka"):
+            rfluka = f"{c}/rfluka"
+        if not ustsuw and os.path.exists(f"{c}/ustsuw"):
+            ustsuw = f"{c}/ustsuw"
+
+    flupro = os.environ.get("FLUPRO")
+    if not flupro:
+        for p in ["/usr/local/fluka", "/usr/local/flukagfor"]:
+            if os.path.exists(p):
+                flupro = p
+                break
+    if not flupro:
+        flupro = "/usr/local/fluka"
+
+    return rfluka, ustsuw, flupro
 
 def parse_usrtrack_ascii(filepath: Path) -> tuple:
     """Đọc file USRTRACK ASCII (do ustsuw sinh ra), trả về (fluence, error_pct)."""
@@ -98,24 +132,14 @@ def parse_usrtrack_binary(filepath: Path) -> tuple:
     fluence = val * dE
     return fluence, 0.0
 
-def process_fort_file(fort_path: Path, flupro: str) -> tuple:
+def process_fort_file(fort_path: Path, ustsuw_bin: str) -> tuple:
     """Chuyển đổi fort thành ascii qua ustsuw hoặc binary parse."""
     if not fort_path.exists():
         raise FileNotFoundError(f"Khong tim thay {fort_path}")
 
     lis_path = fort_path.with_suffix(".lis")
-    ustsuw_bin = None
-    if flupro:
-        candidate = Path(flupro) / "flutil" / "ustsuw"
-        if candidate.exists():
-            ustsuw_bin = str(candidate)
-
-    if not ustsuw_bin:
-        ustsuw_bin = shutil.which("ustsuw") or "/usr/local/flukagfor/flutil/ustsuw"
-
-    if os.path.exists(ustsuw_bin):
+    if ustsuw_bin and os.path.exists(ustsuw_bin):
         try:
-            # ustsuw stdin: <fort_file>\n\n<out_lis>\n
             inp_data = f"{fort_path.name}\n\n{lis_path.name}\n"
             subprocess.run([ustsuw_bin], input=inp_data, text=True, cwd=str(fort_path.parent), capture_output=True, timeout=30)
             if lis_path.exists():
@@ -123,7 +147,6 @@ def process_fort_file(fort_path: Path, flupro: str) -> tuple:
         except Exception:
             pass
 
-    # Fallback binary
     return parse_usrtrack_binary(fort_path)
 
 def parse_args():
@@ -153,7 +176,6 @@ def build_fluka_job_list(excel_path: str, output_base: Path, sample_filter: str,
     for _, row in df.iterrows():
         energy_kev = int(round(row["Energy"]))
 
-        # 1. Job Blank
         if energy_kev not in blank_generated:
             th_blank = 0.5
             blank_name = f"blank_{energy_kev}keV"
@@ -174,7 +196,6 @@ def build_fluka_job_list(excel_path: str, output_base: Path, sample_filter: str,
                 "thickness": th_blank
             })
 
-        # 2. Job Sample
         for mat in target_mats:
             mat_key = mat.lower()
             if mat_key not in COMPOSITION:
@@ -206,19 +227,19 @@ def build_fluka_job_list(excel_path: str, output_base: Path, sample_filter: str,
 def main():
     args = parse_args()
     print("=" * 80)
-    print(f"🚀 STARTING FLUKA PARALLEL RUNNER #{args.runner_id} / {args.num_runners}")
+    print(f"STARTING FLUKA PARALLEL RUNNER #{args.runner_id} / {args.num_runners}")
     print(f"Filter: {args.sample_filter} | Primaries: {args.primaries:,}")
     print(f"Target Drive Folder: {args.gdrive_folder}")
     print("=" * 80)
 
-    flupro = os.environ.get("FLUPRO", "/usr/local/flukagfor")
-    rfluka_bin = shutil.which("rfluka") or f"{flupro}/flutil/rfluka"
-    print(f">>> [FLUKA] rfluka path: {rfluka_bin} (FLUPRO={flupro})")
+    rfluka_bin, ustsuw_bin, flupro = find_fluka_binaries()
+    print(f">>> [FLUKA] rfluka: {rfluka_bin} | ustsuw: {ustsuw_bin} | FLUPRO: {flupro}")
+    if not rfluka_bin or not os.path.exists(rfluka_bin):
+        raise FileNotFoundError(f"Khong tim thay rfluka tren runner! Candidates searched: /usr/local/fluka/bin, /usr/local/flukagfor/bin")
 
     work_dir = Path("/tmp/fluka_work")
     work_dir.mkdir(parents=True, exist_ok=True)
 
-    # Ket noi Google Drive
     drive_service = None
     folder_ids = {}
     try:
@@ -229,19 +250,16 @@ def main():
     except Exception as e:
         print(f">>> [CANH BAO] Khong the ket noi Google Drive: {e}. Luu local.")
 
-    # Check resume
     completed_jobs = set()
     if drive_service and "02_Flux_Data" in folder_ids:
         print(">>> [RESUME] Dang kiem tra cac job FLUKA da hoan thanh tren Drive...")
         completed_jobs = gdrive_helper.get_completed_jobs_from_drive(drive_service, folder_ids["02_Flux_Data"])
         print(f">>> [RESUME] Tim thay {len(completed_jobs)} job FLUKA da hoan thanh tren Drive.")
 
-    # Sinh jobs
     inputs_base = work_dir / "inputs"
     all_jobs = build_fluka_job_list(args.excel_table, inputs_base, args.sample_filter, args.primaries)
     print(f">>> [PLAN] Tong so job FLUKA cua toan bo nghien cuu: {len(all_jobs)}")
 
-    # Phan bo runner
     my_jobs = [j for i, j in enumerate(all_jobs) if i % args.num_runners == (args.runner_id - 1)]
     todo_jobs = [j for j in my_jobs if j["name"] not in completed_jobs]
     print(f">>> [RUNNER #{args.runner_id}] Phan bo: {len(my_jobs)} jobs | Da xong: {len(my_jobs) - len(todo_jobs)} | Con lai: {len(todo_jobs)} jobs")
@@ -271,26 +289,25 @@ def main():
         jinp = job["inp"]
         e_mev = job["energy_kev"] / 1000.0
 
-        print(f"\n--- [{idx}/{len(todo_jobs)}] Runner #{args.runner_id} đang chạy FLUKA: {jname} ({job['sample']} @ {job['energy_kev']} keV, th={job['thickness']} cm) ---")
+        print(f"\n--- [{idx}/{len(todo_jobs)}] Runner #{args.runner_id} dang chay FLUKA: {jname} ({job['sample']} @ {job['energy_kev']} keV, th={job['thickness']} cm) ---")
         t0 = time.time()
 
         env = os.environ.copy()
         env["FLUPRO"] = str(flupro)
         env["FLUFOR"] = "gfortran"
-        env["PATH"] = f"{flupro}/flutil:{flupro}/bin:{env.get('PATH', '')}"
+        env["PATH"] = f"{flupro}/bin:{flupro}/flutil:{env.get('PATH', '')}"
 
         cmd = [rfluka_bin, "-N0", "-M1", jinp.name]
         res = subprocess.run(cmd, cwd=str(jdir), env=env, capture_output=True, text=True)
         job_time = time.time() - t0
 
-        # Tim fort.21 va fort.22
         fort21 = list(jdir.glob("*_fort.21")) or list(jdir.glob("*fort.21"))
         fort22 = list(jdir.glob("*_fort.22")) or list(jdir.glob("*fort.22"))
 
         if fort21 and fort22:
             try:
-                tot_val, tot_err = process_fort_file(fort21[0], flupro)
-                peak_val, peak_err = process_fort_file(fort22[0], flupro)
+                tot_val, tot_err = process_fort_file(fort21[0], ustsuw_bin)
+                peak_val, peak_err = process_fort_file(fort22[0], ustsuw_bin)
                 print(f"    -> OK ({job_time:.1f}s) | Peak: {peak_val:.6e} (err: {peak_err:.2f}%) | Tot: {tot_val:.6e}")
 
                 with open(csv_file, "a", encoding="utf-8") as f:
@@ -304,7 +321,6 @@ def main():
         else:
             print(f"    -> LOI THIEU FILE FORT! Returncode: {res.returncode}. Stderr: {res.stderr[:200]}")
 
-        # Dong bo len Drive sau moi 2 job
         if len(batch_outs) >= 4:
             if drive_service and "03_Simulation_Outputs" in folder_ids:
                 try:
@@ -315,13 +331,12 @@ def main():
                                 z.write(out_file, arcname=out_file.name)
                     gdrive_helper.upload_file_to_folder(drive_service, str(zip_path), folder_ids["03_Simulation_Outputs"])
                     gdrive_helper.upload_file_to_folder(drive_service, str(csv_file), folder_ids["02_Flux_Data"])
-                    print(f">>> [SYNC] Đã đồng bộ FLUKA Batch #{batch_idx} lên Drive!")
+                    print(f">>> [SYNC] Da dong bo FLUKA Batch #{batch_idx} len Drive!")
                     batch_outs = []
                     batch_idx += 1
                 except Exception as e:
                     print(f">>> [CANH BAO SYNC] {e}")
 
-    # Dong bo cuoi cung
     if batch_outs and drive_service and "03_Simulation_Outputs" in folder_ids:
         try:
             zip_path = work_dir / f"outputs_runner_{sample_tag}{args.runner_id:02d}_batch_{batch_idx:03d}.zip"
