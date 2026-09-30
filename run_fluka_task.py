@@ -320,6 +320,14 @@ def main():
                 print(f"    -> LOI PARSE: {e}")
         else:
             print(f"    -> LOI THIEU FILE FORT! Returncode: {res.returncode}. Stderr: {res.stderr[:200]}")
+            # Dump all output files in jdir and fluka_*
+            for log_f in list(jdir.glob("*.log")) + list(jdir.glob("*.out")) + list(jdir.glob("*.err")) + list(jdir.glob("fluka_*/*")):
+                if log_f.is_file() and log_f.stat().st_size > 0:
+                    print(f"=== CONTENT OF {log_f.name} ({log_f.stat().st_size} bytes) ===")
+                    try:
+                        print(log_f.read_text(errors='ignore')[-1500:])
+                    except Exception:
+                        pass
 
         if len(batch_outs) >= 4:
             if drive_service and "03_Simulation_Outputs" in folder_ids:
