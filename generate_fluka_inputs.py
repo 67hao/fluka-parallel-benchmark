@@ -91,7 +91,7 @@ def card(name: str, w1="", w2="", w3="", w4="", w5="", w6="", sdum="") -> str:
     return f"{name:<10}{fmt10(w1)}{fmt10(w2)}{fmt10(w3)}{fmt10(w4)}{fmt10(w5)}{fmt10(w6)}{str(sdum):<10}"[:80] + "\n"
 
 
-def generate_fluka_input(job_name: str, mat_key: str, energy_kev: float, thickness_cm: float, n_primaries: int = 100000000) -> str:
+def generate_fluka_input(job_name: str, mat_key: str, energy_kev: float, thickness_cm: float, n_primaries: int = 1000000) -> str:
     """Sinh noi dung file .inp hoan chinh cho FLUKA."""
     is_blank = (mat_key.lower() == "blank")
     mat_upper = "BLANK" if is_blank else mat_key.upper()
@@ -216,7 +216,7 @@ def _parse_thickness_list(value) -> list:
     return [float(p) for p in parts]
 
 
-def main(excel_path: str = "thickness_table_all9.xlsx", output_dir: str = "inputs", n_primaries: int = 100000000):
+def main(excel_path: str = "thickness_table_all9.xlsx", output_dir: str = "inputs", n_primaries: int = 1000000):
     df = pd.read_excel(excel_path)
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)

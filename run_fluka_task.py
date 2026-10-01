@@ -54,10 +54,21 @@ def find_fluka_binaries():
     return rfluka, ustsuw, flupro
 
 def parse_usrtrack_ascii(filepath: Path) -> tuple:
-    """Đọc file USRTRACK ASCII (do ustsuw sinh ra), trả về (fluence, error_pct)."""
+    """Đọc file USRTRACK ASCII (do ustsuw sinh ra hoặc FLUKA formatted), trả về (fluence, error_pct)."""
     text = filepath.read_text(encoding="utf-8", errors="ignore")
-    lines = text.splitlines()
+    
+    # 1. Regex chuẩn ustsuw: "Fluence in peak (part/cm^2/pr): 8.127688E-03 +/- 0.125 %"
+    m_peak = re.search(r"Fluence\s*(?:in peak)?\s*\(part/cm\^2/pr\):\s*([\d\.\+\-Ee]+)\s*\+/-\s*([\d\.\+\-Ee]+)\s*%", text)
+    if m_peak:
+        return float(m_peak.group(1)), float(m_peak.group(2))
 
+    # 2. Hoặc "Total fluence:"
+    m_tot = re.search(r"(?:Total|Tot\.)\s*fluence.*?:\s*([\d\.\+\-Ee]+)\s*\+/-\s*([\d\.\+\-Ee]+)\s*%", text, re.IGNORECASE)
+    if m_tot:
+        return float(m_tot.group(1)), float(m_tot.group(2))
+
+    # 3. Vector A(ie) của ustsuw
+    lines = text.splitlines()
     bin_width = None
     data_start = False
     error_start = False
@@ -94,16 +105,12 @@ def parse_usrtrack_ascii(filepath: Path) -> tuple:
                 except ValueError:
                     pass
 
-    if not values:
-        raise ValueError(f"Khong tim thay du lieu A(ie) trong {filepath}")
+    if values:
+        fluence = sum(v * bin_width for v in values) if (bin_width and bin_width > 0) else sum(values)
+        err = errors[0] if errors else 0.0
+        return fluence, err
 
-    if bin_width is not None and bin_width > 0:
-        fluence = sum(v * bin_width for v in values)
-    else:
-        fluence = sum(values)
-
-    err = errors[0] if errors else 0.0
-    return fluence, err
+    raise ValueError(f"Khong tim thay du lieu fluence trong {filepath.name}")
 
 def parse_usrtrack_binary(filepath: Path) -> tuple:
     """Parse trực tiếp binary fort file nếu không có ustsuw."""
@@ -138,17 +145,31 @@ def process_fort_file(fort_path: Path, ustsuw_bin: str) -> tuple:
     """Chuyển đổi fort thành ascii qua ustsuw hoặc binary parse."""
     if not fort_path.exists():
         raise FileNotFoundError(f"Khong tim thay {fort_path}")
+    if fort_path.stat().st_size == 0:
+        raise ValueError(f"File {fort_path.name} co kich thuoc 0 bytes (FLUKA loi khoi tao hoac khong ghi duoc)")
 
-    lis_path = fort_path.with_suffix(".lis")
+    # 1. Thử kiểm tra định dạng text ASCII trực tiếp
+    try:
+        raw_head = fort_path.read_bytes()[:128]
+        if b"Differential fluence" in raw_head or b"Total number of primary" in raw_head or b"FLUKA" in raw_head:
+            return parse_usrtrack_ascii(fort_path)
+    except Exception:
+        pass
+
+    # 2. Thử dùng ustsuw nếu có
     if ustsuw_bin and os.path.exists(ustsuw_bin):
         try:
-            inp_data = f"{fort_path.name}\n\n{lis_path.name}\n"
+            inp_data = f"{fort_path.name}\n\nres_{fort_path.stem}\n"
             subprocess.run([ustsuw_bin], input=inp_data, text=True, cwd=str(fort_path.parent), capture_output=True, timeout=30)
-            if lis_path.exists():
-                return parse_usrtrack_ascii(lis_path)
+            
+            # ustsuw sinh ra file res_<stem>_sum.lis
+            candidates = list(fort_path.parent.glob(f"res_{fort_path.stem}*_sum.lis")) or list(fort_path.parent.glob("*_sum.lis"))
+            if candidates:
+                return parse_usrtrack_ascii(candidates[0])
         except Exception:
             pass
 
+    # 3. Parse binary trực tiếp
     return parse_usrtrack_binary(fort_path)
 
 def parse_args():
@@ -156,8 +177,11 @@ def parse_args():
     parser.add_argument("--runner-id", type=int, required=True, help="ID cua runner (1..20)")
     parser.add_argument("--num-runners", type=int, default=20, help="Tong so runner")
     parser.add_argument("--sample-filter", type=str, default="All", help="Loc theo mau: All, S1, S2, ...")
-    parser.add_argument("--primaries", type=int, default=100000000, help="So hat moi job (10^8)")
+    parser.add_argument("--primaries", type=int, default=1000000, help="So hat moi job (mac dinh 10^6)")
     parser.add_argument("--gdrive-folder", type=str, default="1YRth9_SQka7Mpg07GkggANXb9-ed_CkU")
+    parser.add_argument("--excel-table", type=str, default="thickness_table_all9.xlsx")
+    parser.add_argument("--timeout-hours", type=float, default=5.4)
+    return parser.parse_args()
     parser.add_argument("--excel-table", type=str, default="thickness_table_all9.xlsx")
     parser.add_argument("--timeout-hours", type=float, default=5.4)
     return parser.parse_args()
@@ -322,11 +346,12 @@ def main():
         fort21 = list(jdir.glob("*_fort.21")) or list(jdir.glob("*fort.21"))
         fort22 = list(jdir.glob("*_fort.22")) or list(jdir.glob("*fort.22"))
 
-        if fort21 and fort22:
+        fort_valid = False
+        if fort21 and fort22 and fort21[0].stat().st_size > 0 and fort22[0].stat().st_size > 0:
             try:
                 tot_val, tot_err = process_fort_file(fort21[0], ustsuw_bin)
                 peak_val, peak_err = process_fort_file(fort22[0], ustsuw_bin)
-                print(f"    -> OK ({job_time:.1f}s) | Peak: {peak_val:.6e} (err: {peak_err:.2f}%) | Tot: {tot_val:.6e}")
+                print(f"    -> OK ({job_time:.1f}s) | Peak: {peak_val:.6e} (err: {peak_err:.2f}%) | Tot: {tot_val:.6e}", flush=True)
 
                 with open(csv_file, "a", encoding="utf-8") as f:
                     f.write(f"{jname},{e_mev:.6f},{job['sample']},{job['thickness']},{peak_val:.8e},{peak_err:.4f},{tot_val:.8e},{tot_err:.4f},{job_time:.1f}\n")
@@ -334,16 +359,17 @@ def main():
                 batch_outs.extend([fort21[0], fort22[0]])
                 lis_files = list(jdir.glob("*.lis"))
                 batch_outs.extend(lis_files)
+                fort_valid = True
             except Exception as e:
-                print(f"    -> LOI PARSE: {e}")
-        else:
-            print(f"    -> LOI THIEU FILE FORT! Returncode: {res.returncode}. Stderr: {res.stderr[:200]}")
-            # Dump all output files in jdir and fluka_*
+                print(f"    -> LOI PARSE: {e}", flush=True)
+
+        if not fort_valid:
+            print(f"    -> LOI THIEU FILE FORT HOAC FILE 0 BYTES! Returncode: {res.returncode}. Stderr: {res.stderr[:200]}", flush=True)
             for log_f in list(jdir.glob("*.log")) + list(jdir.glob("*.out")) + list(jdir.glob("*.err")) + list(jdir.glob("fluka_*/*")):
                 if log_f.is_file() and log_f.stat().st_size > 0:
-                    print(f"=== CONTENT OF {log_f.name} ({log_f.stat().st_size} bytes) ===")
+                    print(f"=== CONTENT OF {log_f.name} ({log_f.stat().st_size} bytes) ===", flush=True)
                     try:
-                        print(log_f.read_text(errors='ignore')[-1500:])
+                        print(log_f.read_text(errors='ignore')[-1500:], flush=True)
                     except Exception:
                         pass
 

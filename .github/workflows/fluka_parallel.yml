@@ -19,9 +19,9 @@ on:
           - S7
           - S8
       primaries:
-        description: 'So hat moi job (mac dinh: 100000000 = 10^8)'
+        description: 'So hat moi job (mac dinh: 1000000 = 10^6)'
         required: true
-        default: '100000000'
+        default: '1000000'
         type: string
       gdrive_folder:
         description: 'Google Drive Parent Folder ID cho FLUKA'
@@ -76,7 +76,7 @@ jobs:
           FLUFOR: gfortran
         run: |
           export PATH="/usr/local/fluka/bin:/usr/local/fluka/flutil:/usr/local/flukagfor/bin:/usr/local/bin:$PATH"
-          python3 run_fluka_task.py \
+          python3 -u run_fluka_task.py \
             --runner-id ${{ matrix.runner_id }} \
             --num-runners 20 \
             --sample-filter "${{ github.event.inputs.sample_filter }}" \
