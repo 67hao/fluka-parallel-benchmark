@@ -19,9 +19,9 @@ on:
           - S7
           - S8
       primaries:
-        description: 'So hat moi job (mac dinh: 1000000 = 10^6)'
+        description: 'So hat moi job (mac dinh: 100000000 = 10^8)'
         required: true
-        default: '1000000'
+        default: '100000000'
         type: string
       gdrive_folder:
         description: 'Google Drive Parent Folder ID cho FLUKA'

@@ -91,7 +91,7 @@ def card(name: str, w1="", w2="", w3="", w4="", w5="", w6="", sdum="") -> str:
     return f"{name:<10}{fmt10(w1)}{fmt10(w2)}{fmt10(w3)}{fmt10(w4)}{fmt10(w5)}{fmt10(w6)}{str(sdum):<10}"[:80] + "\n"
 
 
-def generate_fluka_input(job_name: str, mat_key: str, energy_kev: float, thickness_cm: float, n_primaries: int = 1000000) -> str:
+def generate_fluka_input(job_name: str, mat_key: str, energy_kev: float, thickness_cm: float, n_primaries: int = 100000000) -> str:
     """Sinh noi dung file .inp hoan chinh cho FLUKA."""
     is_blank = (mat_key.lower() == "blank")
     mat_upper = "BLANK" if is_blank else mat_key.upper()
@@ -106,10 +106,7 @@ def generate_fluka_input(job_name: str, mat_key: str, energy_kev: float, thickne
     th_title_str = f"{thickness_cm:.4f}".rstrip("0").rstrip(".")
     lines.append(f"Paper 1 Benchmark FLUKA - {mat_upper} @ {energy_kev} keV, th={th_title_str} cm\n")
     lines.append("*\n")
-    lines.append(card("DEFAULTS", sdum="EM-CASCA"))
-    lines.append(card("EMFRAY", 1.0))
-    lines.append(card("EMFFLUO", 1.0))
-    lines.append(card("DISCARD", "NEUTRON"))
+    lines.append(card("DEFAULTS", sdum="PRECISIO"))
     lines.append("*\n")
     lines.append(f"* Nguon photon {energy_kev} keV ({e_gev:.6E} GeV) huong doc truc +z\n")
     lines.append(card("BEAM", -e_gev, sdum="PHOTON"))
@@ -180,10 +177,10 @@ def generate_fluka_input(job_name: str, mat_key: str, energy_kev: float, thickne
     lines.append(card("ASSIGNMA", "VACUUM", "AIRVOID"))
     lines.append("*\n")
 
-    # EMF thresholds: ha nguong van chuyen photon/electron xuong 1 keV (1.0E-6 GeV)
-    lines.append("* Ha nguong van chuyen xuong 1 keV\n")
-    lines.append(card("EMFCUT", -1.0e-6, 1.0e-6, 1.0e-5, "VACUUM", "@LASTMAT", sdum="PROD-CUT"))
-    lines.append(card("EMFCUT", -1.0e-6, 1.0e-6, "", "BLKHOLE", "@LASTREG"))
+    # Physics & thresholds toi uu theo chuan Paper 3 (PRECISIO + PHOTONUC + EMFCUT 100 keV electron / 1 keV photon)
+    lines.append(card("PHOTONUC", 1.0, "", "", "BLCKHOLE", "@LASTMAT"))
+    lines.append(card("EMFCUT", -1.0e-4, 1.0e-6, 1.0, 1.0, "@LASTMAT", 1.0, sdum="PROD-CUT"))
+    lines.append(card("EMFCUT", -1.0e-4, 1.0e-6, 0.0, "BLKHOLE", "@LASTREG", 1.0))
     lines.append("*\n")
 
     # Scoring: USRTRACK
@@ -216,7 +213,7 @@ def _parse_thickness_list(value) -> list:
     return [float(p) for p in parts]
 
 
-def main(excel_path: str = "thickness_table_all9.xlsx", output_dir: str = "inputs", n_primaries: int = 1000000):
+def main(excel_path: str = "thickness_table_all9.xlsx", output_dir: str = "inputs", n_primaries: int = 100000000):
     df = pd.read_excel(excel_path)
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
