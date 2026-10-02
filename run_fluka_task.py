@@ -180,6 +180,8 @@ def parse_args():
     parser.add_argument("--primaries", type=int, default=100000000, help="So hat moi job (mac dinh 10^8)")
     parser.add_argument("--gdrive-folder", type=str, default="1YRth9_SQka7Mpg07GkggANXb9-ed_CkU")
     parser.add_argument("--excel-table", type=str, default="thickness_table_all9.xlsx")
+    parser.add_argument("--plan-file", type=str, default=None, help="File JSON chua phan bo jobs sweep (neu co)")
+    parser.add_argument("--github-user", type=str, default=None, help="Ten GitHub account hien tai de tra cuu plan")
     parser.add_argument("--timeout-hours", type=float, default=5.4)
     return parser.parse_args()
 
@@ -301,10 +303,53 @@ def main():
         csv_file.write_text("job_name,energy_mev,sample,thickness_cm,peak_flux,peak_err,total_flux,total_err,elapsed_s\n", encoding="utf-8")
 
     inputs_base = work_dir / "inputs"
-    all_jobs = build_fluka_job_list(args.excel_table, inputs_base, args.sample_filter, args.primaries)
-    print(f">>> [PLAN] Tong so job FLUKA cua toan bo nghien cuu: {len(all_jobs)}")
+    inputs_base.mkdir(parents=True, exist_ok=True)
 
-    my_jobs = [j for i, j in enumerate(all_jobs) if i % args.num_runners == (args.runner_id - 1)]
+    if args.plan_file and os.path.exists(args.plan_file):
+        import json
+        print(f">>> [PLAN-SWEEP] Su dung Sweep Plan File: {args.plan_file}")
+        with open(args.plan_file, "r", encoding="utf-8") as pf:
+            full_plan = json.load(pf)
+        
+        user_key = args.github_user or os.environ.get("GITHUB_REPOSITORY_OWNER") or ""
+        # Match user_key or find in accounts
+        matched_acc = None
+        for acc in full_plan:
+            if acc.lower() == user_key.lower():
+                matched_acc = acc
+                break
+        if not matched_acc and full_plan:
+            # fallback to first key if not found
+            matched_acc = list(full_plan.keys())[0]
+
+        print(f">>> [PLAN-SWEEP] Account: {matched_acc} | Runner ID: {args.runner_id}")
+        raw_my_jobs = full_plan.get(matched_acc, {}).get(str(args.runner_id), [])
+
+        my_jobs = []
+        for rj in raw_my_jobs:
+            jname = rj["job_name"]
+            jdir = inputs_base / jname
+            jdir.mkdir(parents=True, exist_ok=True)
+            jinp = jdir / f"{jname}.inp"
+            mat_key = rj["sample"].lower()
+            e_kev = rj["energy_kev"]
+            th = rj["thickness_cm"]
+            content = generate_fluka_input(jname, mat_key, e_kev, th, args.primaries)
+            jinp.write_text(content, encoding="utf-8")
+            my_jobs.append({
+                "name": jname,
+                "dir": jdir,
+                "inp": jinp,
+                "is_blank": False,
+                "energy_kev": e_kev,
+                "sample": rj["sample"],
+                "thickness": th
+            })
+    else:
+        all_jobs = build_fluka_job_list(args.excel_table, inputs_base, args.sample_filter, args.primaries)
+        print(f">>> [PLAN] Tong so job FLUKA cua toan bo nghien cuu: {len(all_jobs)}")
+        my_jobs = [j for i, j in enumerate(all_jobs) if i % args.num_runners == (args.runner_id - 1)]
+
     todo_jobs = [j for j in my_jobs if j["name"] not in completed_jobs]
     print(f">>> [RUNNER #{args.runner_id}] Phan bo: {len(my_jobs)} jobs | Da xong: {len(my_jobs) - len(todo_jobs)} | Con lai: {len(todo_jobs)} jobs")
 

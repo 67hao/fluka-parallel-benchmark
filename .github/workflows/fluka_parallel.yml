@@ -82,4 +82,6 @@ jobs:
             --sample-filter "${{ github.event.inputs.sample_filter }}" \
             --primaries ${{ github.event.inputs.primaries }} \
             --gdrive-folder "${{ github.event.inputs.gdrive_folder }}" \
+            --plan-file "sweep_plan_200.json" \
+            --github-user "${{ github.repository_owner }}" \
             --timeout-hours 5.4
