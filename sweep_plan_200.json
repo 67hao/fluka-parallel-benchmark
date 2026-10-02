@@ -142,6 +142,13 @@
         "energy_kev": 5000,
         "energy_mev": 5.0,
         "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s6_15keV_th0.005cm",
+        "sample": "S6",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 0.005
       }
     ],
     "17": [
@@ -151,6 +158,13 @@
         "energy_kev": 5000,
         "energy_mev": 5.0,
         "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s2_30keV_th0.005cm",
+        "sample": "S2",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 0.005
       }
     ],
     "18": [
@@ -160,6 +174,13 @@
         "energy_kev": 6000,
         "energy_mev": 6.0,
         "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s6_50keV_th0.8cm",
+        "sample": "S6",
+        "energy_kev": 50,
+        "energy_mev": 0.05,
+        "thickness_cm": 0.8
       }
     ],
     "19": [
@@ -169,6 +190,13 @@
         "energy_kev": 6000,
         "energy_mev": 6.0,
         "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s7_50keV_th0.8cm",
+        "sample": "S7",
+        "energy_kev": 50,
+        "energy_mev": 0.05,
+        "thickness_cm": 0.8
       }
     ],
     "20": [
@@ -178,6 +206,13 @@
         "energy_kev": 8000,
         "energy_mev": 8.0,
         "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s8_200keV_th1cm",
+        "sample": "S8",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
+        "thickness_cm": 1.0
       }
     ]
   },
@@ -191,11 +226,11 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s6_30keV_th0.005cm",
-        "sample": "S6",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
-        "thickness_cm": 0.005
+        "job_name": "s5_800keV_th1.5cm",
+        "sample": "S5",
+        "energy_kev": 800,
+        "energy_mev": 0.8,
+        "thickness_cm": 1.5
       }
     ],
     "2": [
@@ -207,11 +242,11 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s8_30keV_th0.005cm",
-        "sample": "S8",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
-        "thickness_cm": 0.005
+        "job_name": "s5_500keV_th1.5cm",
+        "sample": "S5",
+        "energy_kev": 500,
+        "energy_mev": 0.5,
+        "thickness_cm": 1.5
       }
     ],
     "3": [
@@ -223,11 +258,11 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s8_15keV_th0.005cm",
-        "sample": "S8",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 0.005
+        "job_name": "s6_30keV_th1.5cm",
+        "sample": "S6",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 1.5
       }
     ],
     "4": [
@@ -239,11 +274,11 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s8_20keV_th0.005cm",
+        "job_name": "s8_80keV_th1.5cm",
         "sample": "S8",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
-        "thickness_cm": 0.005
+        "energy_kev": 80,
+        "energy_mev": 0.08,
+        "thickness_cm": 1.5
       }
     ],
     "5": [
@@ -255,11 +290,11 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s5_20keV_th0.1cm",
-        "sample": "S5",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
-        "thickness_cm": 0.1
+        "job_name": "s4_40keV_th2cm",
+        "sample": "S4",
+        "energy_kev": 40,
+        "energy_mev": 0.04,
+        "thickness_cm": 2.0
       }
     ],
     "6": [
@@ -271,11 +306,11 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s7_15keV_th0.1cm",
-        "sample": "S7",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 0.1
+        "job_name": "s4_60keV_th2cm",
+        "sample": "S4",
+        "energy_kev": 60,
+        "energy_mev": 0.06,
+        "thickness_cm": 2.0
       }
     ],
     "7": [
@@ -287,11 +322,11 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s6_20keV_th0.1cm",
-        "sample": "S6",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
-        "thickness_cm": 0.1
+        "job_name": "s5_600keV_th1.5cm",
+        "sample": "S5",
+        "energy_kev": 600,
+        "energy_mev": 0.6,
+        "thickness_cm": 1.5
       }
     ],
     "8": [
@@ -303,11 +338,11 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s2_15keV_th0.1cm",
+        "job_name": "s2_80keV_th1.5cm",
         "sample": "S2",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 0.1
+        "energy_kev": 80,
+        "energy_mev": 0.08,
+        "thickness_cm": 1.5
       }
     ],
     "9": [
@@ -319,11 +354,18 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s8_50keV_th1.5cm",
+        "job_name": "s8_400keV_th2cm",
         "sample": "S8",
-        "energy_kev": 50,
-        "energy_mev": 0.05,
-        "thickness_cm": 1.5
+        "energy_kev": 400,
+        "energy_mev": 0.4,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s8_30keV_th0.005cm",
+        "sample": "S8",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 0.005
       }
     ],
     "10": [
@@ -335,11 +377,18 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s7_100keV_th1.5cm",
-        "sample": "S7",
-        "energy_kev": 100,
-        "energy_mev": 0.1,
-        "thickness_cm": 1.5
+        "job_name": "s8_200keV_th2cm",
+        "sample": "S8",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s8_15keV_th0.005cm",
+        "sample": "S8",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 0.005
       }
     ],
     "11": [
@@ -351,11 +400,18 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s7_40keV_th1.5cm",
-        "sample": "S7",
-        "energy_kev": 40,
-        "energy_mev": 0.04,
-        "thickness_cm": 1.5
+        "job_name": "s4_30keV_th2cm",
+        "sample": "S4",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s8_20keV_th0.005cm",
+        "sample": "S8",
+        "energy_kev": 20,
+        "energy_mev": 0.02,
+        "thickness_cm": 0.005
       }
     ],
     "12": [
@@ -367,11 +423,11 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s8_600keV_th1.5cm",
-        "sample": "S8",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
-        "thickness_cm": 1.5
+        "job_name": "s7_30keV_th2cm",
+        "sample": "S7",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 2.0
       }
     ],
     "13": [
@@ -383,11 +439,11 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s7_60keV_th1.5cm",
-        "sample": "S7",
-        "energy_kev": 60,
-        "energy_mev": 0.06,
-        "thickness_cm": 1.5
+        "job_name": "s5_600keV_th2cm",
+        "sample": "S5",
+        "energy_kev": 600,
+        "energy_mev": 0.6,
+        "thickness_cm": 2.0
       }
     ],
     "14": [
@@ -399,11 +455,11 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s7_300keV_th1.5cm",
-        "sample": "S7",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
-        "thickness_cm": 1.5
+        "job_name": "s5_400keV_th2cm",
+        "sample": "S5",
+        "energy_kev": 400,
+        "energy_mev": 0.4,
+        "thickness_cm": 2.0
       }
     ],
     "15": [
@@ -415,11 +471,11 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s4_50keV_th1.5cm",
-        "sample": "S4",
-        "energy_kev": 50,
-        "energy_mev": 0.05,
-        "thickness_cm": 1.5
+        "job_name": "s6_200keV_th2cm",
+        "sample": "S6",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
+        "thickness_cm": 2.0
       }
     ],
     "16": [
@@ -431,11 +487,11 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s4_80keV_th1.5cm",
-        "sample": "S4",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 1.5
+        "job_name": "s5_200keV_th2cm",
+        "sample": "S5",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
+        "thickness_cm": 2.0
       }
     ],
     "17": [
@@ -447,11 +503,11 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s4_200keV_th1.5cm",
-        "sample": "S4",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 1.5
+        "job_name": "s5_50keV_th2cm",
+        "sample": "S5",
+        "energy_kev": 50,
+        "energy_mev": 0.05,
+        "thickness_cm": 2.0
       }
     ],
     "18": [
@@ -463,11 +519,11 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s4_400keV_th1.5cm",
+        "job_name": "s4_200keV_th2cm",
         "sample": "S4",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
-        "thickness_cm": 1.5
+        "energy_kev": 200,
+        "energy_mev": 0.2,
+        "thickness_cm": 2.0
       }
     ],
     "19": [
@@ -479,11 +535,11 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s8_300keV_th1.5cm",
-        "sample": "S8",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
-        "thickness_cm": 1.5
+        "job_name": "s4_400keV_th2cm",
+        "sample": "S4",
+        "energy_kev": 400,
+        "energy_mev": 0.4,
+        "thickness_cm": 2.0
       }
     ],
     "20": [
@@ -495,11 +551,11 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s2_50keV_th1.5cm",
-        "sample": "S2",
+        "job_name": "s4_50keV_th2cm",
+        "sample": "S4",
         "energy_kev": 50,
         "energy_mev": 0.05,
-        "thickness_cm": 1.5
+        "thickness_cm": 2.0
       }
     ]
   },
@@ -513,11 +569,11 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s5_40keV_th1.5cm",
-        "sample": "S5",
-        "energy_kev": 40,
-        "energy_mev": 0.04,
-        "thickness_cm": 1.5
+        "job_name": "s2_300keV_th2cm",
+        "sample": "S2",
+        "energy_kev": 300,
+        "energy_mev": 0.3,
+        "thickness_cm": 2.0
       }
     ],
     "2": [
@@ -529,11 +585,11 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s5_60keV_th1.5cm",
-        "sample": "S5",
-        "energy_kev": 60,
-        "energy_mev": 0.06,
-        "thickness_cm": 1.5
+        "job_name": "s2_100keV_th2cm",
+        "sample": "S2",
+        "energy_kev": 100,
+        "energy_mev": 0.1,
+        "thickness_cm": 2.0
       }
     ],
     "3": [
@@ -545,11 +601,11 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s5_300keV_th1.5cm",
-        "sample": "S5",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
-        "thickness_cm": 1.5
+        "job_name": "s6_100keV_th2cm",
+        "sample": "S6",
+        "energy_kev": 100,
+        "energy_mev": 0.1,
+        "thickness_cm": 2.0
       }
     ],
     "4": [
@@ -561,11 +617,11 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s5_100keV_th1.5cm",
-        "sample": "S5",
-        "energy_kev": 100,
-        "energy_mev": 0.1,
-        "thickness_cm": 1.5
+        "job_name": "s6_60keV_th2cm",
+        "sample": "S6",
+        "energy_kev": 60,
+        "energy_mev": 0.06,
+        "thickness_cm": 2.0
       }
     ],
     "5": [
@@ -577,11 +633,11 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s8_40keV_th1.5cm",
-        "sample": "S8",
-        "energy_kev": 40,
-        "energy_mev": 0.04,
-        "thickness_cm": 1.5
+        "job_name": "s5_100keV_th2cm",
+        "sample": "S5",
+        "energy_kev": 100,
+        "energy_mev": 0.1,
+        "thickness_cm": 2.0
       }
     ],
     "6": [
@@ -593,11 +649,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s6_80keV_th1.5cm",
-        "sample": "S6",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 1.5
+        "job_name": "s7_200keV_th2cm",
+        "sample": "S7",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s7_15keV_th0.005cm",
+        "sample": "S7",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 0.005
       }
     ],
     "7": [
@@ -609,11 +672,18 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s6_60keV_th1.5cm",
+        "job_name": "s6_40keV_th2cm",
         "sample": "S6",
-        "energy_kev": 60,
-        "energy_mev": 0.06,
-        "thickness_cm": 1.5
+        "energy_kev": 40,
+        "energy_mev": 0.04,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s4_20keV_th0.1cm",
+        "sample": "S4",
+        "energy_kev": 20,
+        "energy_mev": 0.02,
+        "thickness_cm": 0.1
       }
     ],
     "8": [
@@ -625,11 +695,18 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s6_200keV_th1.5cm",
+        "job_name": "s6_80keV_th2cm",
         "sample": "S6",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 1.5
+        "energy_kev": 80,
+        "energy_mev": 0.08,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s2_20keV_th0.1cm",
+        "sample": "S2",
+        "energy_kev": 20,
+        "energy_mev": 0.02,
+        "thickness_cm": 0.1
       }
     ],
     "9": [
@@ -641,11 +718,18 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s7_800keV_th1.5cm",
+        "job_name": "s6_50keV_th2cm",
+        "sample": "S6",
+        "energy_kev": 50,
+        "energy_mev": 0.05,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s7_20keV_th0.1cm",
         "sample": "S7",
-        "energy_kev": 800,
-        "energy_mev": 0.8,
-        "thickness_cm": 1.5
+        "energy_kev": 20,
+        "energy_mev": 0.02,
+        "thickness_cm": 0.1
       }
     ],
     "10": [
@@ -657,11 +741,18 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s6_400keV_th1.5cm",
+        "job_name": "s6_300keV_th2cm",
         "sample": "S6",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
-        "thickness_cm": 1.5
+        "energy_kev": 300,
+        "energy_mev": 0.3,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s8_15keV_th0.1cm",
+        "sample": "S8",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 0.1
       }
     ],
     "11": [
@@ -673,11 +764,18 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s6_100keV_th1.5cm",
-        "sample": "S6",
+        "job_name": "s7_100keV_th2cm",
+        "sample": "S7",
         "energy_kev": 100,
         "energy_mev": 0.1,
-        "thickness_cm": 1.5
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s6_15keV_th0.1cm",
+        "sample": "S6",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 0.1
       }
     ],
     "12": [
@@ -689,11 +787,18 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s6_500keV_th2cm",
+        "job_name": "s6_15keV_th2cm",
         "sample": "S6",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
+        "energy_kev": 15,
+        "energy_mev": 0.015,
         "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s6_400keV_th0.8cm",
+        "sample": "S6",
+        "energy_kev": 400,
+        "energy_mev": 0.4,
+        "thickness_cm": 0.8
       }
     ],
     "13": [
@@ -705,11 +810,18 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s6_600keV_th2cm",
-        "sample": "S6",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
+        "job_name": "s2_30keV_th2cm",
+        "sample": "S2",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
         "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s6_80keV_th0.8cm",
+        "sample": "S6",
+        "energy_kev": 80,
+        "energy_mev": 0.08,
+        "thickness_cm": 0.8
       }
     ],
     "14": [
@@ -721,11 +833,18 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s6_800keV_th2cm",
-        "sample": "S6",
-        "energy_kev": 800,
-        "energy_mev": 0.8,
+        "job_name": "s5_500keV_th2cm",
+        "sample": "S5",
+        "energy_kev": 500,
+        "energy_mev": 0.5,
         "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s8_600keV_th0.8cm",
+        "sample": "S8",
+        "energy_kev": 600,
+        "energy_mev": 0.6,
+        "thickness_cm": 0.8
       }
     ],
     "15": [
@@ -737,11 +856,18 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s4_80keV_th2cm",
-        "sample": "S4",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
+        "job_name": "s5_300keV_th2cm",
+        "sample": "S5",
+        "energy_kev": 300,
+        "energy_mev": 0.3,
         "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s1_15keV_th0.3cm",
+        "sample": "S1",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 0.3
       }
     ],
     "16": [
@@ -753,11 +879,18 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s2_60keV_th2cm",
+        "job_name": "s2_600keV_th2cm",
         "sample": "S2",
-        "energy_kev": 60,
-        "energy_mev": 0.06,
+        "energy_kev": 600,
+        "energy_mev": 0.6,
         "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s6_15keV_th0.3cm",
+        "sample": "S6",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 0.3
       }
     ],
     "17": [
@@ -769,11 +902,18 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s4_500keV_th2cm",
-        "sample": "S4",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
+        "job_name": "s7_15keV_th2cm",
+        "sample": "S7",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
         "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s5_15keV_th0.3cm",
+        "sample": "S5",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 0.3
       }
     ],
     "18": [
@@ -785,11 +925,18 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s4_800keV_th2cm",
-        "sample": "S4",
-        "energy_kev": 800,
-        "energy_mev": 0.8,
+        "job_name": "s2_400keV_th2cm",
+        "sample": "S2",
+        "energy_kev": 400,
+        "energy_mev": 0.4,
         "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s8_15keV_th0.3cm",
+        "sample": "S8",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 0.3
       }
     ],
     "19": [
@@ -801,11 +948,18 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s4_300keV_th2cm",
-        "sample": "S4",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
+        "job_name": "s2_200keV_th2cm",
+        "sample": "S2",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
         "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s2_15keV_th0.3cm",
+        "sample": "S2",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 0.3
       }
     ],
     "20": [
@@ -817,11 +971,18 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s4_100keV_th2cm",
-        "sample": "S4",
-        "energy_kev": 100,
-        "energy_mev": 0.1,
+        "job_name": "s2_80keV_th2cm",
+        "sample": "S2",
+        "energy_kev": 80,
+        "energy_mev": 0.08,
         "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s4_15keV_th0.3cm",
+        "sample": "S4",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 0.3
       }
     ]
   },
@@ -835,11 +996,18 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s2_800keV_th2cm",
+        "job_name": "s2_50keV_th2cm",
         "sample": "S2",
-        "energy_kev": 800,
-        "energy_mev": 0.8,
+        "energy_kev": 50,
+        "energy_mev": 0.05,
         "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s7_15keV_th0.3cm",
+        "sample": "S7",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 0.3
       }
     ],
     "2": [
@@ -851,11 +1019,18 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s2_500keV_th2cm",
-        "sample": "S2",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
+        "job_name": "s3_40keV_th2cm",
+        "sample": "S3",
+        "energy_kev": 40,
+        "energy_mev": 0.04,
         "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s1_15keV_th0.1cm",
+        "sample": "S1",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 0.1
       }
     ],
     "3": [
@@ -867,11 +1042,18 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s2_40keV_th2cm",
-        "sample": "S2",
-        "energy_kev": 40,
-        "energy_mev": 0.04,
+        "job_name": "s3_60keV_th2cm",
+        "sample": "S3",
+        "energy_kev": 60,
+        "energy_mev": 0.06,
         "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s3_15keV_th0.1cm",
+        "sample": "S3",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 0.1
       }
     ],
     "4": [
@@ -883,11 +1065,18 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s4_40keV_th2cm",
-        "sample": "S4",
-        "energy_kev": 40,
-        "energy_mev": 0.04,
+        "job_name": "s3_800keV_th2cm",
+        "sample": "S3",
+        "energy_kev": 800,
+        "energy_mev": 0.8,
         "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s5_15keV_th0.1cm",
+        "sample": "S5",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 0.1
       }
     ],
     "5": [
@@ -899,11 +1088,18 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s4_60keV_th2cm",
-        "sample": "S4",
-        "energy_kev": 60,
-        "energy_mev": 0.06,
+        "job_name": "s3_500keV_th2cm",
+        "sample": "S3",
+        "energy_kev": 500,
+        "energy_mev": 0.5,
         "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s3_20keV_th0.1cm",
+        "sample": "S3",
+        "energy_kev": 20,
+        "energy_mev": 0.02,
+        "thickness_cm": 0.1
       }
     ],
     "6": [
@@ -915,11 +1111,18 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s5_600keV_th1.5cm",
-        "sample": "S5",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
-        "thickness_cm": 1.5
+        "job_name": "s3_100keV_th2cm",
+        "sample": "S3",
+        "energy_kev": 100,
+        "energy_mev": 0.1,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s1_20keV_th0.1cm",
+        "sample": "S1",
+        "energy_kev": 20,
+        "energy_mev": 0.02,
+        "thickness_cm": 0.1
       }
     ],
     "7": [
@@ -931,11 +1134,18 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s2_80keV_th1.5cm",
-        "sample": "S2",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 1.5
+        "job_name": "s3_300keV_th2cm",
+        "sample": "S3",
+        "energy_kev": 300,
+        "energy_mev": 0.3,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s5_20keV_th0.1cm",
+        "sample": "S5",
+        "energy_kev": 20,
+        "energy_mev": 0.02,
+        "thickness_cm": 0.1
       }
     ],
     "8": [
@@ -947,11 +1157,18 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s2_200keV_th1.5cm",
-        "sample": "S2",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 1.5
+        "job_name": "s5_30keV_th2cm",
+        "sample": "S5",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s7_15keV_th0.1cm",
+        "sample": "S7",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 0.1
       }
     ],
     "9": [
@@ -963,11 +1180,18 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s5_200keV_th1.5cm",
+        "job_name": "s5_80keV_th2cm",
         "sample": "S5",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 1.5
+        "energy_kev": 80,
+        "energy_mev": 0.08,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s6_20keV_th0.1cm",
+        "sample": "S6",
+        "energy_kev": 20,
+        "energy_mev": 0.02,
+        "thickness_cm": 0.1
       }
     ],
     "10": [
@@ -979,11 +1203,18 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s5_40keV_th2cm",
-        "sample": "S5",
-        "energy_kev": 40,
-        "energy_mev": 0.04,
-        "thickness_cm": 2.0
+        "job_name": "s3_500keV_th2.5cm",
+        "sample": "S3",
+        "energy_kev": 500,
+        "energy_mev": 0.5,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s6_200keV_th0.8cm",
+        "sample": "S6",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
+        "thickness_cm": 0.8
       }
     ],
     "11": [
@@ -995,11 +1226,18 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s5_60keV_th2cm",
-        "sample": "S5",
-        "energy_kev": 60,
-        "energy_mev": 0.06,
-        "thickness_cm": 2.0
+        "job_name": "s3_300keV_th2.5cm",
+        "sample": "S3",
+        "energy_kev": 300,
+        "energy_mev": 0.3,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s6_600keV_th0.8cm",
+        "sample": "S6",
+        "energy_kev": 600,
+        "energy_mev": 0.6,
+        "thickness_cm": 0.8
       }
     ],
     "12": [
@@ -1011,11 +1249,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s5_200keV_th2cm",
-        "sample": "S5",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 2.0
+        "job_name": "s8_20keV_th2.5cm",
+        "sample": "S8",
+        "energy_kev": 20,
+        "energy_mev": 0.02,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s8_300keV_th1cm",
+        "sample": "S8",
+        "energy_kev": 300,
+        "energy_mev": 0.3,
+        "thickness_cm": 1.0
       }
     ],
     "13": [
@@ -1027,11 +1272,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s5_50keV_th2cm",
-        "sample": "S5",
-        "energy_kev": 50,
-        "energy_mev": 0.05,
-        "thickness_cm": 2.0
+        "job_name": "s2_30keV_th2.5cm",
+        "sample": "S2",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s8_100keV_th1cm",
+        "sample": "S8",
+        "energy_kev": 100,
+        "energy_mev": 0.1,
+        "thickness_cm": 1.0
       }
     ],
     "14": [
@@ -1043,11 +1295,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s4_200keV_th2cm",
-        "sample": "S4",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 2.0
+        "job_name": "s3_800keV_th2.5cm",
+        "sample": "S3",
+        "energy_kev": 800,
+        "energy_mev": 0.8,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s8_80keV_th0.8cm",
+        "sample": "S8",
+        "energy_kev": 80,
+        "energy_mev": 0.08,
+        "thickness_cm": 0.8
       }
     ],
     "15": [
@@ -1059,11 +1318,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s7_400keV_th2cm",
-        "sample": "S7",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
-        "thickness_cm": 2.0
+        "job_name": "s4_600keV_th2.5cm",
+        "sample": "S4",
+        "energy_kev": 600,
+        "energy_mev": 0.6,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s8_500keV_th1.5cm",
+        "sample": "S8",
+        "energy_kev": 500,
+        "energy_mev": 0.5,
+        "thickness_cm": 1.5
       }
     ],
     "16": [
@@ -1075,11 +1341,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s7_200keV_th2cm",
+        "job_name": "s4_50keV_th2.5cm",
+        "sample": "S4",
+        "energy_kev": 50,
+        "energy_mev": 0.05,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s7_50keV_th1.5cm",
         "sample": "S7",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 2.0
+        "energy_kev": 50,
+        "energy_mev": 0.05,
+        "thickness_cm": 1.5
       }
     ],
     "17": [
@@ -1091,11 +1364,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s7_80keV_th2cm",
-        "sample": "S7",
+        "job_name": "s4_80keV_th2.5cm",
+        "sample": "S4",
         "energy_kev": 80,
         "energy_mev": 0.08,
-        "thickness_cm": 2.0
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s7_600keV_th1.5cm",
+        "sample": "S7",
+        "energy_kev": 600,
+        "energy_mev": 0.6,
+        "thickness_cm": 1.5
       }
     ],
     "18": [
@@ -1107,11 +1387,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s7_50keV_th2cm",
-        "sample": "S7",
+        "job_name": "s4_200keV_th2.5cm",
+        "sample": "S4",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s6_50keV_th1cm",
+        "sample": "S6",
         "energy_kev": 50,
         "energy_mev": 0.05,
-        "thickness_cm": 2.0
+        "thickness_cm": 1.0
       }
     ],
     "19": [
@@ -1123,11 +1410,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s8_15keV_th2cm",
+        "job_name": "s8_100keV_th2.5cm",
         "sample": "S8",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 2.0
+        "energy_kev": 100,
+        "energy_mev": 0.1,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s8_400keV_th1cm",
+        "sample": "S8",
+        "energy_kev": 400,
+        "energy_mev": 0.4,
+        "thickness_cm": 1.0
       }
     ],
     "20": [
@@ -1139,11 +1433,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s8_20keV_th2cm",
+        "job_name": "s8_800keV_th2.5cm",
         "sample": "S8",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
-        "thickness_cm": 2.0
+        "energy_kev": 800,
+        "energy_mev": 0.8,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s7_30keV_th1cm",
+        "sample": "S7",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 1.0
       }
     ]
   },
@@ -1157,11 +1458,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s8_800keV_th2cm",
+        "job_name": "s8_500keV_th2.5cm",
         "sample": "S8",
-        "energy_kev": 800,
-        "energy_mev": 0.8,
-        "thickness_cm": 2.0
+        "energy_kev": 500,
+        "energy_mev": 0.5,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s6_30keV_th1cm",
+        "sample": "S6",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 1.0
       }
     ],
     "2": [
@@ -1173,11 +1481,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s8_600keV_th2cm",
-        "sample": "S8",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
-        "thickness_cm": 2.0
+        "job_name": "s6_15keV_th2.5cm",
+        "sample": "S6",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s6_400keV_th1cm",
+        "sample": "S6",
+        "energy_kev": 400,
+        "energy_mev": 0.4,
+        "thickness_cm": 1.0
       }
     ],
     "3": [
@@ -1189,11 +1504,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s7_500keV_th2cm",
-        "sample": "S7",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
-        "thickness_cm": 2.0
+        "job_name": "s3_40keV_th2.5cm",
+        "sample": "S3",
+        "energy_kev": 40,
+        "energy_mev": 0.04,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s8_50keV_th1cm",
+        "sample": "S8",
+        "energy_kev": 50,
+        "energy_mev": 0.05,
+        "thickness_cm": 1.0
       }
     ],
     "4": [
@@ -1205,11 +1527,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s7_800keV_th2cm",
-        "sample": "S7",
-        "energy_kev": 800,
-        "energy_mev": 0.8,
-        "thickness_cm": 2.0
+        "job_name": "s5_60keV_th2.5cm",
+        "sample": "S5",
+        "energy_kev": 60,
+        "energy_mev": 0.06,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s6_80keV_th1cm",
+        "sample": "S6",
+        "energy_kev": 80,
+        "energy_mev": 0.08,
+        "thickness_cm": 1.0
       }
     ],
     "5": [
@@ -1221,11 +1550,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s8_80keV_th2cm",
+        "job_name": "s5_100keV_th2.5cm",
+        "sample": "S5",
+        "energy_kev": 100,
+        "energy_mev": 0.1,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s8_500keV_th1cm",
         "sample": "S8",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 2.0
+        "energy_kev": 500,
+        "energy_mev": 0.5,
+        "thickness_cm": 1.0
       }
     ],
     "6": [
@@ -1237,11 +1573,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s6_30keV_th2cm",
-        "sample": "S6",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
-        "thickness_cm": 2.0
+        "job_name": "s5_300keV_th2.5cm",
+        "sample": "S5",
+        "energy_kev": 300,
+        "energy_mev": 0.3,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s8_800keV_th1cm",
+        "sample": "S8",
+        "energy_kev": 800,
+        "energy_mev": 0.8,
+        "thickness_cm": 1.0
       }
     ],
     "7": [
@@ -1253,11 +1596,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s8_400keV_th2cm",
-        "sample": "S8",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
-        "thickness_cm": 2.0
+        "job_name": "s5_500keV_th2.5cm",
+        "sample": "S5",
+        "energy_kev": 500,
+        "energy_mev": 0.5,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s6_200keV_th1cm",
+        "sample": "S6",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
+        "thickness_cm": 1.0
       }
     ],
     "8": [
@@ -1269,11 +1619,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s8_200keV_th2cm",
-        "sample": "S8",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 2.0
+        "job_name": "s5_800keV_th2.5cm",
+        "sample": "S5",
+        "energy_kev": 800,
+        "energy_mev": 0.8,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s6_600keV_th1cm",
+        "sample": "S6",
+        "energy_kev": 600,
+        "energy_mev": 0.6,
+        "thickness_cm": 1.0
       }
     ],
     "9": [
@@ -1285,11 +1642,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s4_30keV_th2cm",
-        "sample": "S4",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
-        "thickness_cm": 2.0
+        "job_name": "s3_60keV_th2.5cm",
+        "sample": "S3",
+        "energy_kev": 60,
+        "energy_mev": 0.06,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s8_80keV_th1cm",
+        "sample": "S8",
+        "energy_kev": 80,
+        "energy_mev": 0.08,
+        "thickness_cm": 1.0
       }
     ],
     "10": [
@@ -1301,18 +1665,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s7_100keV_th2cm",
-        "sample": "S7",
-        "energy_kev": 100,
-        "energy_mev": 0.1,
-        "thickness_cm": 2.0
+        "job_name": "s2_200keV_th2.5cm",
+        "sample": "S2",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s1_20keV_th0.005cm",
-        "sample": "S1",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
-        "thickness_cm": 0.005
+        "job_name": "s8_100keV_th1.5cm",
+        "sample": "S8",
+        "energy_kev": 100,
+        "energy_mev": 0.1,
+        "thickness_cm": 1.5
       }
     ],
     "11": [
@@ -1324,18 +1688,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s7_300keV_th2cm",
-        "sample": "S7",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
-        "thickness_cm": 2.0
+        "job_name": "s2_80keV_th2.5cm",
+        "sample": "S2",
+        "energy_kev": 80,
+        "energy_mev": 0.08,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s5_30keV_th0.005cm",
-        "sample": "S5",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
-        "thickness_cm": 0.005
+        "job_name": "s8_60keV_th1.5cm",
+        "sample": "S8",
+        "energy_kev": 60,
+        "energy_mev": 0.06,
+        "thickness_cm": 1.5
       }
     ],
     "12": [
@@ -1347,18 +1711,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s7_40keV_th2cm",
-        "sample": "S7",
-        "energy_kev": 40,
-        "energy_mev": 0.04,
-        "thickness_cm": 2.0
+        "job_name": "s4_400keV_th2.5cm",
+        "sample": "S4",
+        "energy_kev": 400,
+        "energy_mev": 0.4,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s6_20keV_th0.005cm",
-        "sample": "S6",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
-        "thickness_cm": 0.005
+        "job_name": "s2_400keV_th1.5cm",
+        "sample": "S2",
+        "energy_kev": 400,
+        "energy_mev": 0.4,
+        "thickness_cm": 1.5
       }
     ],
     "13": [
@@ -1370,18 +1734,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s7_60keV_th2cm",
-        "sample": "S7",
-        "energy_kev": 60,
-        "energy_mev": 0.06,
-        "thickness_cm": 2.0
+        "job_name": "s6_100keV_th2.5cm",
+        "sample": "S6",
+        "energy_kev": 100,
+        "energy_mev": 0.1,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s7_20keV_th0.005cm",
-        "sample": "S7",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
-        "thickness_cm": 0.005
+        "job_name": "s2_600keV_th1.5cm",
+        "sample": "S2",
+        "energy_kev": 600,
+        "energy_mev": 0.6,
+        "thickness_cm": 1.5
       }
     ],
     "14": [
@@ -1393,18 +1757,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s8_50keV_th2cm",
-        "sample": "S8",
-        "energy_kev": 50,
-        "energy_mev": 0.05,
-        "thickness_cm": 2.0
+        "job_name": "s6_60keV_th2.5cm",
+        "sample": "S6",
+        "energy_kev": 60,
+        "energy_mev": 0.06,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s5_20keV_th0.005cm",
+        "job_name": "s5_80keV_th1.5cm",
         "sample": "S5",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
-        "thickness_cm": 0.005
+        "energy_kev": 80,
+        "energy_mev": 0.08,
+        "thickness_cm": 1.5
       }
     ],
     "15": [
@@ -1416,18 +1780,18 @@
         "thickness_cm": 2.0
       },
       {
-        "job_name": "s7_600keV_th2cm",
-        "sample": "S7",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
-        "thickness_cm": 2.0
+        "job_name": "s6_40keV_th2.5cm",
+        "sample": "S6",
+        "energy_kev": 40,
+        "energy_mev": 0.04,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s7_30keV_th0.005cm",
-        "sample": "S7",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
-        "thickness_cm": 0.005
+        "job_name": "s5_50keV_th1.5cm",
+        "sample": "S5",
+        "energy_kev": 50,
+        "energy_mev": 0.05,
+        "thickness_cm": 1.5
       }
     ],
     "16": [
@@ -1439,18 +1803,18 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s6_80keV_th2cm",
+        "job_name": "s6_500keV_th2.5cm",
         "sample": "S6",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 2.0
+        "energy_kev": 500,
+        "energy_mev": 0.5,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s4_20keV_th0.1cm",
-        "sample": "S4",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
-        "thickness_cm": 0.1
+        "job_name": "s5_100keV_th1.5cm",
+        "sample": "S5",
+        "energy_kev": 100,
+        "energy_mev": 0.1,
+        "thickness_cm": 1.5
       }
     ],
     "17": [
@@ -1462,18 +1826,18 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s6_50keV_th2cm",
+        "job_name": "s6_300keV_th2.5cm",
         "sample": "S6",
-        "energy_kev": 50,
-        "energy_mev": 0.05,
-        "thickness_cm": 2.0
+        "energy_kev": 300,
+        "energy_mev": 0.3,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s2_20keV_th0.1cm",
-        "sample": "S2",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
-        "thickness_cm": 0.1
+        "job_name": "s8_40keV_th1.5cm",
+        "sample": "S8",
+        "energy_kev": 40,
+        "energy_mev": 0.04,
+        "thickness_cm": 1.5
       }
     ],
     "18": [
@@ -1485,18 +1849,18 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s6_300keV_th2cm",
-        "sample": "S6",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
-        "thickness_cm": 2.0
+        "job_name": "s2_600keV_th2.5cm",
+        "sample": "S2",
+        "energy_kev": 600,
+        "energy_mev": 0.6,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s7_20keV_th0.1cm",
-        "sample": "S7",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
-        "thickness_cm": 0.1
+        "job_name": "s8_30keV_th1.5cm",
+        "sample": "S8",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 1.5
       }
     ],
     "19": [
@@ -1508,18 +1872,18 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s2_40keV_th2.5cm",
-        "sample": "S2",
-        "energy_kev": 40,
-        "energy_mev": 0.04,
+        "job_name": "s8_600keV_th2.5cm",
+        "sample": "S8",
+        "energy_kev": 600,
+        "energy_mev": 0.6,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s8_30keV_th1.5cm",
-        "sample": "S8",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
-        "thickness_cm": 1.5
+        "job_name": "s6_400keV_th2cm",
+        "sample": "S6",
+        "energy_kev": 400,
+        "energy_mev": 0.4,
+        "thickness_cm": 2.0
       }
     ],
     "20": [
@@ -1531,18 +1895,18 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s2_60keV_th2.5cm",
-        "sample": "S2",
-        "energy_kev": 60,
-        "energy_mev": 0.06,
+        "job_name": "s6_200keV_th2.5cm",
+        "sample": "S6",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s8_100keV_th1.5cm",
-        "sample": "S8",
-        "energy_kev": 100,
-        "energy_mev": 0.1,
-        "thickness_cm": 1.5
+        "job_name": "s5_40keV_th2cm",
+        "sample": "S5",
+        "energy_kev": 40,
+        "energy_mev": 0.04,
+        "thickness_cm": 2.0
       }
     ]
   },
@@ -1556,18 +1920,18 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s2_100keV_th2.5cm",
-        "sample": "S2",
-        "energy_kev": 100,
-        "energy_mev": 0.1,
+        "job_name": "s7_20keV_th2.5cm",
+        "sample": "S7",
+        "energy_kev": 20,
+        "energy_mev": 0.02,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s8_60keV_th1.5cm",
-        "sample": "S8",
+        "job_name": "s5_60keV_th2cm",
+        "sample": "S5",
         "energy_kev": 60,
         "energy_mev": 0.06,
-        "thickness_cm": 1.5
+        "thickness_cm": 2.0
       }
     ],
     "2": [
@@ -1579,18 +1943,18 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s2_300keV_th2.5cm",
-        "sample": "S2",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
+        "job_name": "s6_20keV_th2.5cm",
+        "sample": "S6",
+        "energy_kev": 20,
+        "energy_mev": 0.02,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s2_400keV_th1.5cm",
-        "sample": "S2",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
-        "thickness_cm": 1.5
+        "job_name": "s4_600keV_th2cm",
+        "sample": "S4",
+        "energy_kev": 600,
+        "energy_mev": 0.6,
+        "thickness_cm": 2.0
       }
     ],
     "3": [
@@ -1602,18 +1966,18 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s2_500keV_th2.5cm",
-        "sample": "S2",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
+        "job_name": "s7_60keV_th2.5cm",
+        "sample": "S7",
+        "energy_kev": 60,
+        "energy_mev": 0.06,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s2_600keV_th1.5cm",
-        "sample": "S2",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
-        "thickness_cm": 1.5
+        "job_name": "s6_500keV_th2cm",
+        "sample": "S6",
+        "energy_kev": 500,
+        "energy_mev": 0.5,
+        "thickness_cm": 2.0
       }
     ],
     "4": [
@@ -1625,18 +1989,18 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s2_800keV_th2.5cm",
-        "sample": "S2",
-        "energy_kev": 800,
-        "energy_mev": 0.8,
+        "job_name": "s7_100keV_th2.5cm",
+        "sample": "S7",
+        "energy_kev": 100,
+        "energy_mev": 0.1,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s5_80keV_th1.5cm",
-        "sample": "S5",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 1.5
+        "job_name": "s6_600keV_th2cm",
+        "sample": "S6",
+        "energy_kev": 600,
+        "energy_mev": 0.6,
+        "thickness_cm": 2.0
       }
     ],
     "5": [
@@ -1648,18 +2012,18 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s2_50keV_th2.5cm",
-        "sample": "S2",
-        "energy_kev": 50,
-        "energy_mev": 0.05,
+        "job_name": "s7_300keV_th2.5cm",
+        "sample": "S7",
+        "energy_kev": 300,
+        "energy_mev": 0.3,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s5_50keV_th1.5cm",
-        "sample": "S5",
-        "energy_kev": 50,
-        "energy_mev": 0.05,
-        "thickness_cm": 1.5
+        "job_name": "s6_800keV_th2cm",
+        "sample": "S6",
+        "energy_kev": 800,
+        "energy_mev": 0.8,
+        "thickness_cm": 2.0
       }
     ],
     "6": [
@@ -1671,18 +2035,18 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s3_600keV_th2.5cm",
-        "sample": "S3",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
+        "job_name": "s7_500keV_th2.5cm",
+        "sample": "S7",
+        "energy_kev": 500,
+        "energy_mev": 0.5,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s5_800keV_th1.5cm",
-        "sample": "S5",
-        "energy_kev": 800,
-        "energy_mev": 0.8,
-        "thickness_cm": 1.5
+        "job_name": "s4_80keV_th2cm",
+        "sample": "S4",
+        "energy_kev": 80,
+        "energy_mev": 0.08,
+        "thickness_cm": 2.0
       }
     ],
     "7": [
@@ -1694,18 +2058,18 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s3_400keV_th2.5cm",
-        "sample": "S3",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
+        "job_name": "s1_500keV_th2.5cm",
+        "sample": "S1",
+        "energy_kev": 500,
+        "energy_mev": 0.5,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s5_500keV_th1.5cm",
-        "sample": "S5",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
-        "thickness_cm": 1.5
+        "job_name": "s2_60keV_th2cm",
+        "sample": "S2",
+        "energy_kev": 60,
+        "energy_mev": 0.06,
+        "thickness_cm": 2.0
       }
     ],
     "8": [
@@ -1717,18 +2081,18 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s3_200keV_th2.5cm",
-        "sample": "S3",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
+        "job_name": "s1_300keV_th2.5cm",
+        "sample": "S1",
+        "energy_kev": 300,
+        "energy_mev": 0.3,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s6_30keV_th1.5cm",
-        "sample": "S6",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
-        "thickness_cm": 1.5
+        "job_name": "s4_500keV_th2cm",
+        "sample": "S4",
+        "energy_kev": 500,
+        "energy_mev": 0.5,
+        "thickness_cm": 2.0
       }
     ],
     "9": [
@@ -1740,18 +2104,18 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s3_80keV_th2.5cm",
-        "sample": "S3",
+        "job_name": "s6_80keV_th2.5cm",
+        "sample": "S6",
         "energy_kev": 80,
         "energy_mev": 0.08,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s8_80keV_th1.5cm",
-        "sample": "S8",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 1.5
+        "job_name": "s4_800keV_th2cm",
+        "sample": "S4",
+        "energy_kev": 800,
+        "energy_mev": 0.8,
+        "thickness_cm": 2.0
       }
     ],
     "10": [
@@ -1763,18 +2127,18 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s3_50keV_th2.5cm",
-        "sample": "S3",
+        "job_name": "s6_50keV_th2.5cm",
+        "sample": "S6",
         "energy_kev": 50,
         "energy_mev": 0.05,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s8_500keV_th1.5cm",
-        "sample": "S8",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
-        "thickness_cm": 1.5
+        "job_name": "s4_300keV_th2cm",
+        "sample": "S4",
+        "energy_kev": 300,
+        "energy_mev": 0.3,
+        "thickness_cm": 2.0
       }
     ],
     "11": [
@@ -1786,18 +2150,18 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s5_30keV_th2.5cm",
-        "sample": "S5",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
+        "job_name": "s8_50keV_th2.5cm",
+        "sample": "S8",
+        "energy_kev": 50,
+        "energy_mev": 0.05,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s7_50keV_th1.5cm",
-        "sample": "S7",
-        "energy_kev": 50,
-        "energy_mev": 0.05,
-        "thickness_cm": 1.5
+        "job_name": "s4_100keV_th2cm",
+        "sample": "S4",
+        "energy_kev": 100,
+        "energy_mev": 0.1,
+        "thickness_cm": 2.0
       }
     ],
     "12": [
@@ -1809,18 +2173,18 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s6_800keV_th2.5cm",
-        "sample": "S6",
-        "energy_kev": 800,
-        "energy_mev": 0.8,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s7_600keV_th1.5cm",
+        "job_name": "s7_600keV_th2.5cm",
         "sample": "S7",
         "energy_kev": 600,
         "energy_mev": 0.6,
-        "thickness_cm": 1.5
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s2_800keV_th2cm",
+        "sample": "S2",
+        "energy_kev": 800,
+        "energy_mev": 0.8,
+        "thickness_cm": 2.0
       }
     ],
     "13": [
@@ -1832,18 +2196,18 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s6_500keV_th2.5cm",
-        "sample": "S6",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
+        "job_name": "s7_200keV_th2.5cm",
+        "sample": "S7",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s6_50keV_th1cm",
-        "sample": "S6",
-        "energy_kev": 50,
-        "energy_mev": 0.05,
-        "thickness_cm": 1.0
+        "job_name": "s2_500keV_th2cm",
+        "sample": "S2",
+        "energy_kev": 500,
+        "energy_mev": 0.5,
+        "thickness_cm": 2.0
       }
     ],
     "14": [
@@ -1855,18 +2219,18 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s6_300keV_th2.5cm",
-        "sample": "S6",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
+        "job_name": "s7_400keV_th2.5cm",
+        "sample": "S7",
+        "energy_kev": 400,
+        "energy_mev": 0.4,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s8_400keV_th1cm",
-        "sample": "S8",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
-        "thickness_cm": 1.0
+        "job_name": "s2_40keV_th2cm",
+        "sample": "S2",
+        "energy_kev": 40,
+        "energy_mev": 0.04,
+        "thickness_cm": 2.0
       }
     ],
     "15": [
@@ -1878,18 +2242,25 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s7_800keV_th2.5cm",
-        "sample": "S7",
-        "energy_kev": 800,
-        "energy_mev": 0.8,
+        "job_name": "s6_400keV_th2.5cm",
+        "sample": "S6",
+        "energy_kev": 400,
+        "energy_mev": 0.4,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s6_500keV_th1.5cm",
-        "sample": "S6",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
-        "thickness_cm": 1.5
+        "job_name": "s8_800keV_th2cm",
+        "sample": "S8",
+        "energy_kev": 800,
+        "energy_mev": 0.8,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s5_30keV_th0.005cm",
+        "sample": "S5",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 0.005
       }
     ],
     "16": [
@@ -1901,18 +2272,25 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s8_40keV_th2.5cm",
-        "sample": "S8",
-        "energy_kev": 40,
-        "energy_mev": 0.04,
+        "job_name": "s1_800keV_th2.5cm",
+        "sample": "S1",
+        "energy_kev": 800,
+        "energy_mev": 0.8,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s6_300keV_th1.5cm",
+        "job_name": "s8_600keV_th2cm",
+        "sample": "S8",
+        "energy_kev": 600,
+        "energy_mev": 0.6,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s6_20keV_th0.005cm",
         "sample": "S6",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
-        "thickness_cm": 1.5
+        "energy_kev": 20,
+        "energy_mev": 0.02,
+        "thickness_cm": 0.005
       }
     ],
     "17": [
@@ -1924,18 +2302,25 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s8_60keV_th2.5cm",
+        "job_name": "s8_400keV_th2.5cm",
         "sample": "S8",
-        "energy_kev": 60,
-        "energy_mev": 0.06,
+        "energy_kev": 400,
+        "energy_mev": 0.4,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s7_200keV_th1.5cm",
+        "job_name": "s7_500keV_th2cm",
         "sample": "S7",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 1.5
+        "energy_kev": 500,
+        "energy_mev": 0.5,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s7_20keV_th0.005cm",
+        "sample": "S7",
+        "energy_kev": 20,
+        "energy_mev": 0.02,
+        "thickness_cm": 0.005
       }
     ],
     "18": [
@@ -1947,18 +2332,25 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s4_30keV_th2.5cm",
-        "sample": "S4",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
+        "job_name": "s8_80keV_th2.5cm",
+        "sample": "S8",
+        "energy_kev": 80,
+        "energy_mev": 0.08,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s7_500keV_th1.5cm",
+        "job_name": "s7_800keV_th2cm",
         "sample": "S7",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
-        "thickness_cm": 1.5
+        "energy_kev": 800,
+        "energy_mev": 0.8,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s5_20keV_th0.005cm",
+        "sample": "S5",
+        "energy_kev": 20,
+        "energy_mev": 0.02,
+        "thickness_cm": 0.005
       }
     ],
     "19": [
@@ -1970,18 +2362,25 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s8_300keV_th2.5cm",
+        "job_name": "s8_200keV_th2.5cm",
         "sample": "S8",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
+        "energy_kev": 200,
+        "energy_mev": 0.2,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s8_400keV_th1.5cm",
+        "job_name": "s8_80keV_th2cm",
         "sample": "S8",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
-        "thickness_cm": 1.5
+        "energy_kev": 80,
+        "energy_mev": 0.08,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s7_30keV_th0.005cm",
+        "sample": "S7",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 0.005
       }
     ],
     "20": [
@@ -1993,18 +2392,25 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s2_400keV_th2.5cm",
-        "sample": "S2",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
+        "job_name": "s6_600keV_th2.5cm",
+        "sample": "S6",
+        "energy_kev": 600,
+        "energy_mev": 0.6,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s8_200keV_th1.5cm",
-        "sample": "S8",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 1.5
+        "job_name": "s6_30keV_th2cm",
+        "sample": "S6",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s6_30keV_th0.005cm",
+        "sample": "S6",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 0.005
       }
     ]
   },
@@ -2018,18 +2424,25 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s7_30keV_th2.5cm",
-        "sample": "S7",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
-        "thickness_cm": 2.5
+        "job_name": "s8_500keV_th3cm",
+        "sample": "S8",
+        "energy_kev": 500,
+        "energy_mev": 0.5,
+        "thickness_cm": 3.0
       },
       {
-        "job_name": "s6_600keV_th1.5cm",
-        "sample": "S6",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
-        "thickness_cm": 1.5
+        "job_name": "s7_80keV_th2cm",
+        "sample": "S7",
+        "energy_kev": 80,
+        "energy_mev": 0.08,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s3_20keV_th0.005cm",
+        "sample": "S3",
+        "energy_kev": 20,
+        "energy_mev": 0.02,
+        "thickness_cm": 0.005
       }
     ],
     "2": [
@@ -2041,18 +2454,25 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s1_100keV_th2.5cm",
-        "sample": "S1",
-        "energy_kev": 100,
-        "energy_mev": 0.1,
-        "thickness_cm": 2.5
+        "job_name": "s8_60keV_th3cm",
+        "sample": "S8",
+        "energy_kev": 60,
+        "energy_mev": 0.06,
+        "thickness_cm": 3.0
       },
       {
-        "job_name": "s6_40keV_th1.5cm",
-        "sample": "S6",
-        "energy_kev": 40,
-        "energy_mev": 0.04,
-        "thickness_cm": 1.5
+        "job_name": "s7_50keV_th2cm",
+        "sample": "S7",
+        "energy_kev": 50,
+        "energy_mev": 0.05,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s2_20keV_th0.005cm",
+        "sample": "S2",
+        "energy_kev": 20,
+        "energy_mev": 0.02,
+        "thickness_cm": 0.005
       }
     ],
     "3": [
@@ -2064,18 +2484,25 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s1_60keV_th2.5cm",
-        "sample": "S1",
-        "energy_kev": 60,
-        "energy_mev": 0.06,
-        "thickness_cm": 2.5
+        "job_name": "s6_20keV_th3cm",
+        "sample": "S6",
+        "energy_kev": 20,
+        "energy_mev": 0.02,
+        "thickness_cm": 3.0
       },
       {
-        "job_name": "s6_50keV_th1.5cm",
-        "sample": "S6",
-        "energy_kev": 50,
-        "energy_mev": 0.05,
-        "thickness_cm": 1.5
+        "job_name": "s8_15keV_th2cm",
+        "sample": "S8",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s1_30keV_th0.005cm",
+        "sample": "S1",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 0.005
       }
     ],
     "4": [
@@ -2087,18 +2514,25 @@
         "thickness_cm": 1.5
       },
       {
-        "job_name": "s1_40keV_th2.5cm",
-        "sample": "S1",
-        "energy_kev": 40,
-        "energy_mev": 0.04,
-        "thickness_cm": 2.5
+        "job_name": "s3_30keV_th3cm",
+        "sample": "S3",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 3.0
       },
       {
-        "job_name": "s6_800keV_th1.5cm",
-        "sample": "S6",
-        "energy_kev": 800,
-        "energy_mev": 0.8,
-        "thickness_cm": 1.5
+        "job_name": "s8_20keV_th2cm",
+        "sample": "S8",
+        "energy_kev": 20,
+        "energy_mev": 0.02,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s1_20keV_th0.005cm",
+        "sample": "S1",
+        "energy_kev": 20,
+        "energy_mev": 0.02,
+        "thickness_cm": 0.005
       }
     ],
     "5": [
@@ -2110,10 +2544,619 @@
         "thickness_cm": 1.0
       },
       {
-        "job_name": "s1_80keV_th2.5cm",
-        "sample": "S1",
+        "job_name": "s4_30keV_th3cm",
+        "sample": "S4",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s7_40keV_th2cm",
+        "sample": "S7",
+        "energy_kev": 40,
+        "energy_mev": 0.04,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s4_15keV_th0.005cm",
+        "sample": "S4",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 0.005
+      }
+    ],
+    "6": [
+      {
+        "job_name": "s6_3000keV_th1cm",
+        "sample": "S6",
+        "energy_kev": 3000,
+        "energy_mev": 3.0,
+        "thickness_cm": 1.0
+      },
+      {
+        "job_name": "s2_40keV_th3cm",
+        "sample": "S2",
+        "energy_kev": 40,
+        "energy_mev": 0.04,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s7_60keV_th2cm",
+        "sample": "S7",
+        "energy_kev": 60,
+        "energy_mev": 0.06,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s4_20keV_th0.005cm",
+        "sample": "S4",
+        "energy_kev": 20,
+        "energy_mev": 0.02,
+        "thickness_cm": 0.005
+      }
+    ],
+    "7": [
+      {
+        "job_name": "s8_3000keV_th1cm",
+        "sample": "S8",
+        "energy_kev": 3000,
+        "energy_mev": 3.0,
+        "thickness_cm": 1.0
+      },
+      {
+        "job_name": "s4_40keV_th3cm",
+        "sample": "S4",
+        "energy_kev": 40,
+        "energy_mev": 0.04,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s8_50keV_th2cm",
+        "sample": "S8",
+        "energy_kev": 50,
+        "energy_mev": 0.05,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s2_15keV_th0.005cm",
+        "sample": "S2",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 0.005
+      }
+    ],
+    "8": [
+      {
+        "job_name": "s8_2000keV_th1cm",
+        "sample": "S8",
+        "energy_kev": 2000,
+        "energy_mev": 2.0,
+        "thickness_cm": 1.0
+      },
+      {
+        "job_name": "s2_100keV_th3cm",
+        "sample": "S2",
+        "energy_kev": 100,
+        "energy_mev": 0.1,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s7_600keV_th2cm",
+        "sample": "S7",
+        "energy_kev": 600,
+        "energy_mev": 0.6,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s5_15keV_th0.005cm",
+        "sample": "S5",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 0.005
+      }
+    ],
+    "9": [
+      {
+        "job_name": "s6_1000keV_th1cm",
+        "sample": "S6",
+        "energy_kev": 1000,
+        "energy_mev": 1.0,
+        "thickness_cm": 1.0
+      },
+      {
+        "job_name": "s8_40keV_th3cm",
+        "sample": "S8",
+        "energy_kev": 40,
+        "energy_mev": 0.04,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s7_400keV_th2cm",
+        "sample": "S7",
+        "energy_kev": 400,
+        "energy_mev": 0.4,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s4_30keV_th0.005cm",
+        "sample": "S4",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 0.005
+      }
+    ],
+    "10": [
+      {
+        "job_name": "s8_6000keV_th1cm",
+        "sample": "S8",
+        "energy_kev": 6000,
+        "energy_mev": 6.0,
+        "thickness_cm": 1.0
+      },
+      {
+        "job_name": "s2_60keV_th3cm",
+        "sample": "S2",
+        "energy_kev": 60,
+        "energy_mev": 0.06,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s7_300keV_th2cm",
+        "sample": "S7",
+        "energy_kev": 300,
+        "energy_mev": 0.3,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s3_15keV_th0.005cm",
+        "sample": "S3",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 0.005
+      }
+    ],
+    "11": [
+      {
+        "job_name": "s7_3000keV_th0.8cm",
+        "sample": "S7",
+        "energy_kev": 3000,
+        "energy_mev": 3.0,
+        "thickness_cm": 0.8
+      },
+      {
+        "job_name": "s2_800keV_th3cm",
+        "sample": "S2",
+        "energy_kev": 800,
+        "energy_mev": 0.8,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s5_20keV_th2.5cm",
+        "sample": "S5",
+        "energy_kev": 20,
+        "energy_mev": 0.02,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s2_15keV_th0.1cm",
+        "sample": "S2",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 0.1
+      }
+    ],
+    "12": [
+      {
+        "job_name": "s8_1000keV_th0.8cm",
+        "sample": "S8",
+        "energy_kev": 1000,
+        "energy_mev": 1.0,
+        "thickness_cm": 0.8
+      },
+      {
+        "job_name": "s2_500keV_th3cm",
+        "sample": "S2",
+        "energy_kev": 500,
+        "energy_mev": 0.5,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s8_30keV_th2cm",
+        "sample": "S8",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s7_200keV_th0.8cm",
+        "sample": "S7",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
+        "thickness_cm": 0.8
+      }
+    ],
+    "13": [
+      {
+        "job_name": "s7_1000keV_th0.8cm",
+        "sample": "S7",
+        "energy_kev": 1000,
+        "energy_mev": 1.0,
+        "thickness_cm": 0.8
+      },
+      {
+        "job_name": "s2_300keV_th3cm",
+        "sample": "S2",
+        "energy_kev": 300,
+        "energy_mev": 0.3,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s8_60keV_th2cm",
+        "sample": "S8",
+        "energy_kev": 60,
+        "energy_mev": 0.06,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s7_400keV_th0.8cm",
+        "sample": "S7",
+        "energy_kev": 400,
+        "energy_mev": 0.4,
+        "thickness_cm": 0.8
+      }
+    ],
+    "14": [
+      {
+        "job_name": "s6_3000keV_th0.8cm",
+        "sample": "S6",
+        "energy_kev": 3000,
+        "energy_mev": 3.0,
+        "thickness_cm": 0.8
+      },
+      {
+        "job_name": "s4_800keV_th3cm",
+        "sample": "S4",
+        "energy_kev": 800,
+        "energy_mev": 0.8,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s8_500keV_th2cm",
+        "sample": "S8",
+        "energy_kev": 500,
+        "energy_mev": 0.5,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s7_600keV_th0.8cm",
+        "sample": "S7",
+        "energy_kev": 600,
+        "energy_mev": 0.6,
+        "thickness_cm": 0.8
+      }
+    ],
+    "15": [
+      {
+        "job_name": "s6_5000keV_th1cm",
+        "sample": "S6",
+        "energy_kev": 5000,
+        "energy_mev": 5.0,
+        "thickness_cm": 1.0
+      },
+      {
+        "job_name": "s4_500keV_th3cm",
+        "sample": "S4",
+        "energy_kev": 500,
+        "energy_mev": 0.5,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s8_100keV_th2cm",
+        "sample": "S8",
+        "energy_kev": 100,
+        "energy_mev": 0.1,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s7_80keV_th0.8cm",
+        "sample": "S7",
         "energy_kev": 80,
         "energy_mev": 0.08,
+        "thickness_cm": 0.8
+      }
+    ],
+    "16": [
+      {
+        "job_name": "s8_3000keV_th0.8cm",
+        "sample": "S8",
+        "energy_kev": 3000,
+        "energy_mev": 3.0,
+        "thickness_cm": 0.8
+      },
+      {
+        "job_name": "s4_60keV_th3cm",
+        "sample": "S4",
+        "energy_kev": 60,
+        "energy_mev": 0.06,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s8_300keV_th2cm",
+        "sample": "S8",
+        "energy_kev": 300,
+        "energy_mev": 0.3,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s8_50keV_th0.8cm",
+        "sample": "S8",
+        "energy_kev": 50,
+        "energy_mev": 0.05,
+        "thickness_cm": 0.8
+      }
+    ],
+    "17": [
+      {
+        "job_name": "s8_5000keV_th1cm",
+        "sample": "S8",
+        "energy_kev": 5000,
+        "energy_mev": 5.0,
+        "thickness_cm": 1.0
+      },
+      {
+        "job_name": "s4_100keV_th3cm",
+        "sample": "S4",
+        "energy_kev": 100,
+        "energy_mev": 0.1,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s8_40keV_th2cm",
+        "sample": "S8",
+        "energy_kev": 40,
+        "energy_mev": 0.04,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s8_200keV_th0.8cm",
+        "sample": "S8",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
+        "thickness_cm": 0.8
+      }
+    ],
+    "18": [
+      {
+        "job_name": "s6_1000keV_th0.8cm",
+        "sample": "S6",
+        "energy_kev": 1000,
+        "energy_mev": 1.0,
+        "thickness_cm": 0.8
+      },
+      {
+        "job_name": "s4_300keV_th3cm",
+        "sample": "S4",
+        "energy_kev": 300,
+        "energy_mev": 0.3,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s5_800keV_th2cm",
+        "sample": "S5",
+        "energy_kev": 800,
+        "energy_mev": 0.8,
+        "thickness_cm": 2.0
+      },
+      {
+        "job_name": "s8_400keV_th0.8cm",
+        "sample": "S8",
+        "energy_kev": 400,
+        "energy_mev": 0.4,
+        "thickness_cm": 0.8
+      }
+    ],
+    "19": [
+      {
+        "job_name": "s8_4000keV_th1cm",
+        "sample": "S8",
+        "energy_kev": 4000,
+        "energy_mev": 4.0,
+        "thickness_cm": 1.0
+      },
+      {
+        "job_name": "s3_600keV_th3cm",
+        "sample": "S3",
+        "energy_kev": 600,
+        "energy_mev": 0.6,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s5_40keV_th2.5cm",
+        "sample": "S5",
+        "energy_kev": 40,
+        "energy_mev": 0.04,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s8_600keV_th1cm",
+        "sample": "S8",
+        "energy_kev": 600,
+        "energy_mev": 0.6,
+        "thickness_cm": 1.0
+      }
+    ],
+    "20": [
+      {
+        "job_name": "s7_5000keV_th0.8cm",
+        "sample": "S7",
+        "energy_kev": 5000,
+        "energy_mev": 5.0,
+        "thickness_cm": 0.8
+      },
+      {
+        "job_name": "s2_30keV_th3cm",
+        "sample": "S2",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s8_15keV_th2.5cm",
+        "sample": "S8",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s8_30keV_th1cm",
+        "sample": "S8",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 1.0
+      }
+    ]
+  },
+  "Bethwl": {
+    "1": [
+      {
+        "job_name": "s6_5000keV_th0.8cm",
+        "sample": "S6",
+        "energy_kev": 5000,
+        "energy_mev": 5.0,
+        "thickness_cm": 0.8
+      },
+      {
+        "job_name": "s3_200keV_th3cm",
+        "sample": "S3",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s3_100keV_th2.5cm",
+        "sample": "S3",
+        "energy_kev": 100,
+        "energy_mev": 0.1,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s8_60keV_th1cm",
+        "sample": "S8",
+        "energy_kev": 60,
+        "energy_mev": 0.06,
+        "thickness_cm": 1.0
+      }
+    ],
+    "2": [
+      {
+        "job_name": "s8_5000keV_th0.8cm",
+        "sample": "S8",
+        "energy_kev": 5000,
+        "energy_mev": 5.0,
+        "thickness_cm": 0.8
+      },
+      {
+        "job_name": "s3_400keV_th3cm",
+        "sample": "S3",
+        "energy_kev": 400,
+        "energy_mev": 0.4,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s6_30keV_th2.5cm",
+        "sample": "S6",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s8_40keV_th1cm",
+        "sample": "S8",
+        "energy_kev": 40,
+        "energy_mev": 0.04,
+        "thickness_cm": 1.0
+      }
+    ],
+    "3": [
+      {
+        "job_name": "s1_800keV_th3cm",
+        "sample": "S1",
+        "energy_kev": 800,
+        "energy_mev": 0.8,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s7_600keV_th3cm",
+        "sample": "S7",
+        "energy_kev": 600,
+        "energy_mev": 0.6,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s7_50keV_th2.5cm",
+        "sample": "S7",
+        "energy_kev": 50,
+        "energy_mev": 0.05,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s2_200keV_th1.5cm",
+        "sample": "S2",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
+        "thickness_cm": 1.5
+      }
+    ],
+    "4": [
+      {
+        "job_name": "s7_200keV_th3cm",
+        "sample": "S7",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s7_30keV_th3cm",
+        "sample": "S7",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s7_80keV_th2.5cm",
+        "sample": "S7",
+        "energy_kev": 80,
+        "energy_mev": 0.08,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s5_200keV_th1.5cm",
+        "sample": "S5",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
+        "thickness_cm": 1.5
+      }
+    ],
+    "5": [
+      {
+        "job_name": "s7_80keV_th3cm",
+        "sample": "S7",
+        "energy_kev": 80,
+        "energy_mev": 0.08,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s7_500keV_th3cm",
+        "sample": "S7",
+        "energy_kev": 500,
+        "energy_mev": 0.5,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s5_600keV_th2.5cm",
+        "sample": "S5",
+        "energy_kev": 600,
+        "energy_mev": 0.6,
         "thickness_cm": 2.5
       },
       {
@@ -2126,15 +3169,22 @@
     ],
     "6": [
       {
-        "job_name": "s6_3000keV_th1cm",
-        "sample": "S6",
-        "energy_kev": 3000,
-        "energy_mev": 3.0,
-        "thickness_cm": 1.0
+        "job_name": "s1_500keV_th3cm",
+        "sample": "S1",
+        "energy_kev": 500,
+        "energy_mev": 0.5,
+        "thickness_cm": 3.0
       },
       {
-        "job_name": "s1_400keV_th2.5cm",
-        "sample": "S1",
+        "job_name": "s4_80keV_th3cm",
+        "sample": "S4",
+        "energy_kev": 80,
+        "energy_mev": 0.08,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s5_400keV_th2.5cm",
+        "sample": "S5",
         "energy_kev": 400,
         "energy_mev": 0.4,
         "thickness_cm": 2.5
@@ -2149,17 +3199,24 @@
     ],
     "7": [
       {
-        "job_name": "s8_3000keV_th1cm",
-        "sample": "S8",
-        "energy_kev": 3000,
-        "energy_mev": 3.0,
-        "thickness_cm": 1.0
+        "job_name": "s1_40keV_th3cm",
+        "sample": "S1",
+        "energy_kev": 40,
+        "energy_mev": 0.04,
+        "thickness_cm": 3.0
       },
       {
-        "job_name": "s1_200keV_th2.5cm",
-        "sample": "S1",
+        "job_name": "s4_200keV_th3cm",
+        "sample": "S4",
         "energy_kev": 200,
         "energy_mev": 0.2,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s5_80keV_th2.5cm",
+        "sample": "S5",
+        "energy_kev": 80,
+        "energy_mev": 0.08,
         "thickness_cm": 2.5
       },
       {
@@ -2172,17 +3229,24 @@
     ],
     "8": [
       {
-        "job_name": "s8_2000keV_th1cm",
-        "sample": "S8",
-        "energy_kev": 2000,
-        "energy_mev": 2.0,
-        "thickness_cm": 1.0
+        "job_name": "s1_300keV_th3cm",
+        "sample": "S1",
+        "energy_kev": 300,
+        "energy_mev": 0.3,
+        "thickness_cm": 3.0
       },
       {
-        "job_name": "s1_600keV_th2.5cm",
-        "sample": "S1",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
+        "job_name": "s7_400keV_th3cm",
+        "sample": "S7",
+        "energy_kev": 400,
+        "energy_mev": 0.4,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s5_200keV_th2.5cm",
+        "sample": "S5",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
         "thickness_cm": 2.5
       },
       {
@@ -2195,17 +3259,24 @@
     ],
     "9": [
       {
-        "job_name": "s6_1000keV_th1cm",
-        "sample": "S6",
-        "energy_kev": 1000,
-        "energy_mev": 1.0,
-        "thickness_cm": 1.0
+        "job_name": "s1_100keV_th3cm",
+        "sample": "S1",
+        "energy_kev": 100,
+        "energy_mev": 0.1,
+        "thickness_cm": 3.0
       },
       {
-        "job_name": "s8_30keV_th2.5cm",
-        "sample": "S8",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
+        "job_name": "s7_50keV_th3cm",
+        "sample": "S7",
+        "energy_kev": 50,
+        "energy_mev": 0.05,
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s5_50keV_th2.5cm",
+        "sample": "S5",
+        "energy_kev": 50,
+        "energy_mev": 0.05,
         "thickness_cm": 2.5
       },
       {
@@ -2218,195 +3289,18 @@
     ],
     "10": [
       {
-        "job_name": "s8_6000keV_th1cm",
-        "sample": "S8",
-        "energy_kev": 6000,
-        "energy_mev": 6.0,
-        "thickness_cm": 1.0
-      },
-      {
-        "job_name": "s1_50keV_th2.5cm",
+        "job_name": "s1_60keV_th3cm",
         "sample": "S1",
-        "energy_kev": 50,
-        "energy_mev": 0.05,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s4_600keV_th2cm",
-        "sample": "S4",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
-        "thickness_cm": 2.0
-      }
-    ],
-    "11": [
-      {
-        "job_name": "s7_3000keV_th0.8cm",
-        "sample": "S7",
-        "energy_kev": 3000,
-        "energy_mev": 3.0,
-        "thickness_cm": 0.8
-      },
-      {
-        "job_name": "s7_50keV_th2.5cm",
-        "sample": "S7",
-        "energy_kev": 50,
-        "energy_mev": 0.05,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s4_400keV_th2cm",
-        "sample": "S4",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
-        "thickness_cm": 2.0
-      }
-    ],
-    "12": [
-      {
-        "job_name": "s8_1000keV_th0.8cm",
-        "sample": "S8",
-        "energy_kev": 1000,
-        "energy_mev": 1.0,
-        "thickness_cm": 0.8
-      },
-      {
-        "job_name": "s7_80keV_th2.5cm",
-        "sample": "S7",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s4_50keV_th2cm",
-        "sample": "S4",
-        "energy_kev": 50,
-        "energy_mev": 0.05,
-        "thickness_cm": 2.0
-      }
-    ],
-    "13": [
-      {
-        "job_name": "s7_1000keV_th0.8cm",
-        "sample": "S7",
-        "energy_kev": 1000,
-        "energy_mev": 1.0,
-        "thickness_cm": 0.8
-      },
-      {
-        "job_name": "s5_600keV_th2.5cm",
-        "sample": "S5",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s2_300keV_th2cm",
-        "sample": "S2",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
-        "thickness_cm": 2.0
-      }
-    ],
-    "14": [
-      {
-        "job_name": "s6_3000keV_th0.8cm",
-        "sample": "S6",
-        "energy_kev": 3000,
-        "energy_mev": 3.0,
-        "thickness_cm": 0.8
-      },
-      {
-        "job_name": "s5_400keV_th2.5cm",
-        "sample": "S5",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s2_100keV_th2cm",
-        "sample": "S2",
-        "energy_kev": 100,
-        "energy_mev": 0.1,
-        "thickness_cm": 2.0
-      }
-    ],
-    "15": [
-      {
-        "job_name": "s6_5000keV_th1cm",
-        "sample": "S6",
-        "energy_kev": 5000,
-        "energy_mev": 5.0,
-        "thickness_cm": 1.0
-      },
-      {
-        "job_name": "s5_80keV_th2.5cm",
-        "sample": "S5",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s6_100keV_th2cm",
-        "sample": "S6",
-        "energy_kev": 100,
-        "energy_mev": 0.1,
-        "thickness_cm": 2.0
-      }
-    ],
-    "16": [
-      {
-        "job_name": "s8_3000keV_th0.8cm",
-        "sample": "S8",
-        "energy_kev": 3000,
-        "energy_mev": 3.0,
-        "thickness_cm": 0.8
-      },
-      {
-        "job_name": "s5_200keV_th2.5cm",
-        "sample": "S5",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s6_60keV_th2cm",
-        "sample": "S6",
         "energy_kev": 60,
         "energy_mev": 0.06,
-        "thickness_cm": 2.0
-      }
-    ],
-    "17": [
-      {
-        "job_name": "s8_5000keV_th1cm",
-        "sample": "S8",
-        "energy_kev": 5000,
-        "energy_mev": 5.0,
-        "thickness_cm": 1.0
+        "thickness_cm": 3.0
       },
       {
-        "job_name": "s5_50keV_th2.5cm",
+        "job_name": "s5_300keV_th3cm",
         "sample": "S5",
-        "energy_kev": 50,
-        "energy_mev": 0.05,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s5_100keV_th2cm",
-        "sample": "S5",
-        "energy_kev": 100,
-        "energy_mev": 0.1,
-        "thickness_cm": 2.0
-      }
-    ],
-    "18": [
-      {
-        "job_name": "s6_1000keV_th0.8cm",
-        "sample": "S6",
-        "energy_kev": 1000,
-        "energy_mev": 1.0,
-        "thickness_cm": 0.8
+        "energy_kev": 300,
+        "energy_mev": 0.3,
+        "thickness_cm": 3.0
       },
       {
         "job_name": "s7_40keV_th2.5cm",
@@ -2416,345 +3310,11 @@
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s6_400keV_th2cm",
+        "job_name": "s6_60keV_th1.5cm",
         "sample": "S6",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
-        "thickness_cm": 2.0
-      }
-    ],
-    "19": [
-      {
-        "job_name": "s8_4000keV_th1cm",
-        "sample": "S8",
-        "energy_kev": 4000,
-        "energy_mev": 4.0,
-        "thickness_cm": 1.0
-      },
-      {
-        "job_name": "s7_400keV_th2.5cm",
-        "sample": "S7",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s6_200keV_th2cm",
-        "sample": "S6",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 2.0
-      }
-    ],
-    "20": [
-      {
-        "job_name": "s7_5000keV_th0.8cm",
-        "sample": "S7",
-        "energy_kev": 5000,
-        "energy_mev": 5.0,
-        "thickness_cm": 0.8
-      },
-      {
-        "job_name": "s8_50keV_th2.5cm",
-        "sample": "S8",
-        "energy_kev": 50,
-        "energy_mev": 0.05,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s7_30keV_th2cm",
-        "sample": "S7",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
-        "thickness_cm": 2.0
-      }
-    ]
-  },
-  "Bethwl": {
-    "1": [
-      {
-        "job_name": "s6_5000keV_th0.8cm",
-        "sample": "S6",
-        "energy_kev": 5000,
-        "energy_mev": 5.0,
-        "thickness_cm": 0.8
-      },
-      {
-        "job_name": "s7_600keV_th2.5cm",
-        "sample": "S7",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s5_600keV_th2cm",
-        "sample": "S5",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
-        "thickness_cm": 2.0
-      }
-    ],
-    "2": [
-      {
-        "job_name": "s8_5000keV_th0.8cm",
-        "sample": "S8",
-        "energy_kev": 5000,
-        "energy_mev": 5.0,
-        "thickness_cm": 0.8
-      },
-      {
-        "job_name": "s7_200keV_th2.5cm",
-        "sample": "S7",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s5_400keV_th2cm",
-        "sample": "S5",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
-        "thickness_cm": 2.0
-      }
-    ],
-    "3": [
-      {
-        "job_name": "s1_800keV_th3cm",
-        "sample": "S1",
-        "energy_kev": 800,
-        "energy_mev": 0.8,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s5_400keV_th3cm",
-        "sample": "S5",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s5_300keV_th2.5cm",
-        "sample": "S5",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s8_15keV_th0.1cm",
-        "sample": "S8",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 0.1
-      }
-    ],
-    "4": [
-      {
-        "job_name": "s7_200keV_th3cm",
-        "sample": "S7",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s6_200keV_th3cm",
-        "sample": "S6",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s5_500keV_th2.5cm",
-        "sample": "S5",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s6_15keV_th0.1cm",
-        "sample": "S6",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 0.1
-      }
-    ],
-    "5": [
-      {
-        "job_name": "s7_80keV_th3cm",
-        "sample": "S7",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s7_300keV_th3cm",
-        "sample": "S7",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s5_800keV_th2.5cm",
-        "sample": "S5",
-        "energy_kev": 800,
-        "energy_mev": 0.8,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s3_15keV_th0.005cm",
-        "sample": "S3",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 0.005
-      }
-    ],
-    "6": [
-      {
-        "job_name": "s1_500keV_th3cm",
-        "sample": "S1",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s8_30keV_th3cm",
-        "sample": "S8",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s3_60keV_th2.5cm",
-        "sample": "S3",
         "energy_kev": 60,
         "energy_mev": 0.06,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s4_15keV_th0.005cm",
-        "sample": "S4",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 0.005
-      }
-    ],
-    "7": [
-      {
-        "job_name": "s1_40keV_th3cm",
-        "sample": "S1",
-        "energy_kev": 40,
-        "energy_mev": 0.04,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s8_20keV_th3cm",
-        "sample": "S8",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s8_15keV_th2.5cm",
-        "sample": "S8",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s4_20keV_th0.005cm",
-        "sample": "S4",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
-        "thickness_cm": 0.005
-      }
-    ],
-    "8": [
-      {
-        "job_name": "s1_300keV_th3cm",
-        "sample": "S1",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s8_800keV_th3cm",
-        "sample": "S8",
-        "energy_kev": 800,
-        "energy_mev": 0.8,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s3_100keV_th2.5cm",
-        "sample": "S3",
-        "energy_kev": 100,
-        "energy_mev": 0.1,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s2_15keV_th0.005cm",
-        "sample": "S2",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 0.005
-      }
-    ],
-    "9": [
-      {
-        "job_name": "s1_100keV_th3cm",
-        "sample": "S1",
-        "energy_kev": 100,
-        "energy_mev": 0.1,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s2_20keV_th3cm",
-        "sample": "S2",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s6_30keV_th2.5cm",
-        "sample": "S6",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s5_15keV_th0.005cm",
-        "sample": "S5",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 0.005
-      }
-    ],
-    "10": [
-      {
-        "job_name": "s1_60keV_th3cm",
-        "sample": "S1",
-        "energy_kev": 60,
-        "energy_mev": 0.06,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s1_50keV_th3cm",
-        "sample": "S1",
-        "energy_kev": 50,
-        "energy_mev": 0.05,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s5_40keV_th2.5cm",
-        "sample": "S5",
-        "energy_kev": 40,
-        "energy_mev": 0.04,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s4_30keV_th0.005cm",
-        "sample": "S4",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
-        "thickness_cm": 0.005
+        "thickness_cm": 1.5
       }
     ],
     "11": [
@@ -2766,25 +3326,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s1_80keV_th3cm",
-        "sample": "S1",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
+        "job_name": "s6_15keV_th3cm",
+        "sample": "S6",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s8_20keV_th2.5cm",
-        "sample": "S8",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
+        "job_name": "s1_50keV_th2.5cm",
+        "sample": "S1",
+        "energy_kev": 50,
+        "energy_mev": 0.05,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s7_15keV_th0.005cm",
-        "sample": "S7",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 0.005
+        "job_name": "s6_200keV_th1.5cm",
+        "sample": "S6",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
+        "thickness_cm": 1.5
       }
     ],
     "12": [
@@ -2796,25 +3356,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s8_100keV_th3cm",
-        "sample": "S8",
-        "energy_kev": 100,
-        "energy_mev": 0.1,
+        "job_name": "s5_800keV_th3cm",
+        "sample": "S5",
+        "energy_kev": 800,
+        "energy_mev": 0.8,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s2_30keV_th2.5cm",
-        "sample": "S2",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
+        "job_name": "s1_80keV_th2.5cm",
+        "sample": "S1",
+        "energy_kev": 80,
+        "energy_mev": 0.08,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s6_15keV_th0.005cm",
-        "sample": "S6",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 0.005
+        "job_name": "s7_800keV_th1.5cm",
+        "sample": "S7",
+        "energy_kev": 800,
+        "energy_mev": 0.8,
+        "thickness_cm": 1.5
       }
     ],
     "13": [
@@ -2826,25 +3386,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s8_15keV_th3cm",
-        "sample": "S8",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
+        "job_name": "s6_800keV_th3cm",
+        "sample": "S6",
+        "energy_kev": 800,
+        "energy_mev": 0.8,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s3_800keV_th2.5cm",
-        "sample": "S3",
-        "energy_kev": 800,
-        "energy_mev": 0.8,
+        "job_name": "s1_400keV_th2.5cm",
+        "sample": "S1",
+        "energy_kev": 400,
+        "energy_mev": 0.4,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s2_30keV_th0.005cm",
-        "sample": "S2",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
-        "thickness_cm": 0.005
+        "job_name": "s6_400keV_th1.5cm",
+        "sample": "S6",
+        "energy_kev": 400,
+        "energy_mev": 0.4,
+        "thickness_cm": 1.5
       }
     ],
     "14": [
@@ -2856,25 +3416,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s1_400keV_th3cm",
-        "sample": "S1",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
+        "job_name": "s6_300keV_th3cm",
+        "sample": "S6",
+        "energy_kev": 300,
+        "energy_mev": 0.3,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s3_500keV_th2.5cm",
-        "sample": "S3",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
+        "job_name": "s1_200keV_th2.5cm",
+        "sample": "S1",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s3_20keV_th0.005cm",
-        "sample": "S3",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
-        "thickness_cm": 0.005
+        "job_name": "s6_100keV_th1.5cm",
+        "sample": "S6",
+        "energy_kev": 100,
+        "energy_mev": 0.1,
+        "thickness_cm": 1.5
       }
     ],
     "15": [
@@ -2886,25 +3446,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s3_20keV_th3cm",
-        "sample": "S3",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
+        "job_name": "s6_500keV_th3cm",
+        "sample": "S6",
+        "energy_kev": 500,
+        "energy_mev": 0.5,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s3_300keV_th2.5cm",
-        "sample": "S3",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
+        "job_name": "s1_600keV_th2.5cm",
+        "sample": "S1",
+        "energy_kev": 600,
+        "energy_mev": 0.6,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s2_20keV_th0.005cm",
-        "sample": "S2",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
-        "thickness_cm": 0.005
+        "job_name": "s6_600keV_th1.5cm",
+        "sample": "S6",
+        "energy_kev": 600,
+        "energy_mev": 0.6,
+        "thickness_cm": 1.5
       }
     ],
     "16": [
@@ -2916,25 +3476,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s2_15keV_th3cm",
-        "sample": "S2",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
+        "job_name": "s6_60keV_th3cm",
+        "sample": "S6",
+        "energy_kev": 60,
+        "energy_mev": 0.06,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s5_20keV_th2.5cm",
-        "sample": "S5",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
+        "job_name": "s8_30keV_th2.5cm",
+        "sample": "S8",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s1_30keV_th0.005cm",
-        "sample": "S1",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
-        "thickness_cm": 0.005
+        "job_name": "s6_40keV_th1.5cm",
+        "sample": "S6",
+        "energy_kev": 40,
+        "energy_mev": 0.04,
+        "thickness_cm": 1.5
       }
     ],
     "17": [
@@ -2946,25 +3506,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s1_600keV_th3cm",
-        "sample": "S1",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
+        "job_name": "s5_500keV_th3cm",
+        "sample": "S5",
+        "energy_kev": 500,
+        "energy_mev": 0.5,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s8_30keV_th2cm",
-        "sample": "S8",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
-        "thickness_cm": 2.0
-      },
-      {
-        "job_name": "s7_30keV_th1cm",
+        "job_name": "s7_30keV_th2.5cm",
         "sample": "S7",
         "energy_kev": 30,
         "energy_mev": 0.03,
-        "thickness_cm": 1.0
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s6_50keV_th1.5cm",
+        "sample": "S6",
+        "energy_kev": 50,
+        "energy_mev": 0.05,
+        "thickness_cm": 1.5
       }
     ],
     "18": [
@@ -2976,25 +3536,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s8_300keV_th3cm",
-        "sample": "S8",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
+        "job_name": "s6_40keV_th3cm",
+        "sample": "S6",
+        "energy_kev": 40,
+        "energy_mev": 0.04,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s8_60keV_th2cm",
-        "sample": "S8",
-        "energy_kev": 60,
-        "energy_mev": 0.06,
-        "thickness_cm": 2.0
+        "job_name": "s1_100keV_th2.5cm",
+        "sample": "S1",
+        "energy_kev": 100,
+        "energy_mev": 0.1,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s6_30keV_th1cm",
+        "job_name": "s6_800keV_th1.5cm",
         "sample": "S6",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
-        "thickness_cm": 1.0
+        "energy_kev": 800,
+        "energy_mev": 0.8,
+        "thickness_cm": 1.5
       }
     ],
     "19": [
@@ -3006,25 +3566,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s1_200keV_th3cm",
-        "sample": "S1",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
+        "job_name": "s6_80keV_th3cm",
+        "sample": "S6",
+        "energy_kev": 80,
+        "energy_mev": 0.08,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s8_500keV_th2cm",
-        "sample": "S8",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
-        "thickness_cm": 2.0
+        "job_name": "s1_60keV_th2.5cm",
+        "sample": "S1",
+        "energy_kev": 60,
+        "energy_mev": 0.06,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s6_400keV_th1cm",
+        "job_name": "s6_80keV_th1.5cm",
         "sample": "S6",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
-        "thickness_cm": 1.0
+        "energy_kev": 80,
+        "energy_mev": 0.08,
+        "thickness_cm": 1.5
       }
     ],
     "20": [
@@ -3036,25 +3596,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s3_50keV_th3cm",
-        "sample": "S3",
+        "job_name": "s5_50keV_th3cm",
+        "sample": "S5",
         "energy_kev": 50,
         "energy_mev": 0.05,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s8_100keV_th2cm",
-        "sample": "S8",
-        "energy_kev": 100,
-        "energy_mev": 0.1,
-        "thickness_cm": 2.0
+        "job_name": "s1_40keV_th2.5cm",
+        "sample": "S1",
+        "energy_kev": 40,
+        "energy_mev": 0.04,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s8_50keV_th1cm",
-        "sample": "S8",
-        "energy_kev": 50,
-        "energy_mev": 0.05,
-        "thickness_cm": 1.0
+        "job_name": "s6_500keV_th1.5cm",
+        "sample": "S6",
+        "energy_kev": 500,
+        "energy_mev": 0.5,
+        "thickness_cm": 1.5
       }
     ]
   },
@@ -3068,25 +3628,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s2_30keV_th3cm",
-        "sample": "S2",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
+        "job_name": "s5_80keV_th3cm",
+        "sample": "S5",
+        "energy_kev": 80,
+        "energy_mev": 0.08,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s8_300keV_th2cm",
-        "sample": "S8",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
-        "thickness_cm": 2.0
+        "job_name": "s7_800keV_th2.5cm",
+        "sample": "S7",
+        "energy_kev": 800,
+        "energy_mev": 0.8,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s6_80keV_th1cm",
+        "job_name": "s6_300keV_th1.5cm",
         "sample": "S6",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 1.0
+        "energy_kev": 300,
+        "energy_mev": 0.3,
+        "thickness_cm": 1.5
       }
     ],
     "2": [
@@ -3098,25 +3658,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s3_200keV_th3cm",
-        "sample": "S3",
+        "job_name": "s5_200keV_th3cm",
+        "sample": "S5",
         "energy_kev": 200,
         "energy_mev": 0.2,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s8_40keV_th2cm",
+        "job_name": "s8_40keV_th2.5cm",
         "sample": "S8",
         "energy_kev": 40,
         "energy_mev": 0.04,
-        "thickness_cm": 2.0
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s8_500keV_th1cm",
-        "sample": "S8",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
-        "thickness_cm": 1.0
+        "job_name": "s7_200keV_th1.5cm",
+        "sample": "S7",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
+        "thickness_cm": 1.5
       }
     ],
     "3": [
@@ -3128,25 +3688,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s3_400keV_th3cm",
-        "sample": "S3",
+        "job_name": "s5_400keV_th3cm",
+        "sample": "S5",
         "energy_kev": 400,
         "energy_mev": 0.4,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s5_800keV_th2cm",
-        "sample": "S5",
-        "energy_kev": 800,
-        "energy_mev": 0.8,
-        "thickness_cm": 2.0
+        "job_name": "s8_60keV_th2.5cm",
+        "sample": "S8",
+        "energy_kev": 60,
+        "energy_mev": 0.06,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s8_800keV_th1cm",
-        "sample": "S8",
-        "energy_kev": 800,
-        "energy_mev": 0.8,
-        "thickness_cm": 1.0
+        "job_name": "s7_500keV_th1.5cm",
+        "sample": "S7",
+        "energy_kev": 500,
+        "energy_mev": 0.5,
+        "thickness_cm": 1.5
       }
     ],
     "4": [
@@ -3158,25 +3718,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s3_600keV_th3cm",
-        "sample": "S3",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s6_15keV_th2cm",
-        "sample": "S6",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 2.0
-      },
-      {
-        "job_name": "s6_200keV_th1cm",
+        "job_name": "s6_200keV_th3cm",
         "sample": "S6",
         "energy_kev": 200,
         "energy_mev": 0.2,
-        "thickness_cm": 1.0
+        "thickness_cm": 3.0
+      },
+      {
+        "job_name": "s4_30keV_th2.5cm",
+        "sample": "S4",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 2.5
+      },
+      {
+        "job_name": "s8_400keV_th1.5cm",
+        "sample": "S8",
+        "energy_kev": 400,
+        "energy_mev": 0.4,
+        "thickness_cm": 1.5
       }
     ],
     "5": [
@@ -3188,25 +3748,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s2_800keV_th3cm",
-        "sample": "S2",
-        "energy_kev": 800,
-        "energy_mev": 0.8,
+        "job_name": "s7_300keV_th3cm",
+        "sample": "S7",
+        "energy_kev": 300,
+        "energy_mev": 0.3,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s2_30keV_th2cm",
-        "sample": "S2",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
-        "thickness_cm": 2.0
+        "job_name": "s8_300keV_th2.5cm",
+        "sample": "S8",
+        "energy_kev": 300,
+        "energy_mev": 0.3,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s6_600keV_th1cm",
-        "sample": "S6",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
-        "thickness_cm": 1.0
+        "job_name": "s8_200keV_th1.5cm",
+        "sample": "S8",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
+        "thickness_cm": 1.5
       }
     ],
     "6": [
@@ -3218,25 +3778,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s2_500keV_th3cm",
-        "sample": "S2",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
+        "job_name": "s8_30keV_th3cm",
+        "sample": "S8",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s5_500keV_th2cm",
-        "sample": "S5",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
-        "thickness_cm": 2.0
+        "job_name": "s2_400keV_th2.5cm",
+        "sample": "S2",
+        "energy_kev": 400,
+        "energy_mev": 0.4,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s8_80keV_th1cm",
+        "job_name": "s8_50keV_th1.5cm",
         "sample": "S8",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 1.0
+        "energy_kev": 50,
+        "energy_mev": 0.05,
+        "thickness_cm": 1.5
       }
     ],
     "7": [
@@ -3248,25 +3808,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s2_300keV_th3cm",
-        "sample": "S2",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
+        "job_name": "s8_20keV_th3cm",
+        "sample": "S8",
+        "energy_kev": 20,
+        "energy_mev": 0.02,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s5_300keV_th2cm",
-        "sample": "S5",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
-        "thickness_cm": 2.0
+        "job_name": "s2_40keV_th2.5cm",
+        "sample": "S2",
+        "energy_kev": 40,
+        "energy_mev": 0.04,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s8_200keV_th1cm",
-        "sample": "S8",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 1.0
+        "job_name": "s7_100keV_th1.5cm",
+        "sample": "S7",
+        "energy_kev": 100,
+        "energy_mev": 0.1,
+        "thickness_cm": 1.5
       }
     ],
     "8": [
@@ -3278,25 +3838,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s4_800keV_th3cm",
-        "sample": "S4",
+        "job_name": "s8_800keV_th3cm",
+        "sample": "S8",
         "energy_kev": 800,
         "energy_mev": 0.8,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s2_600keV_th2cm",
+        "job_name": "s2_60keV_th2.5cm",
         "sample": "S2",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
-        "thickness_cm": 2.0
+        "energy_kev": 60,
+        "energy_mev": 0.06,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s8_30keV_th1cm",
-        "sample": "S8",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
-        "thickness_cm": 1.0
+        "job_name": "s7_40keV_th1.5cm",
+        "sample": "S7",
+        "energy_kev": 40,
+        "energy_mev": 0.04,
+        "thickness_cm": 1.5
       }
     ],
     "9": [
@@ -3308,25 +3868,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s4_500keV_th3cm",
-        "sample": "S4",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
+        "job_name": "s2_20keV_th3cm",
+        "sample": "S2",
+        "energy_kev": 20,
+        "energy_mev": 0.02,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s7_15keV_th2cm",
-        "sample": "S7",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 2.0
+        "job_name": "s2_100keV_th2.5cm",
+        "sample": "S2",
+        "energy_kev": 100,
+        "energy_mev": 0.1,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s8_60keV_th1cm",
+        "job_name": "s8_600keV_th1.5cm",
         "sample": "S8",
-        "energy_kev": 60,
-        "energy_mev": 0.06,
-        "thickness_cm": 1.0
+        "energy_kev": 600,
+        "energy_mev": 0.6,
+        "thickness_cm": 1.5
       }
     ],
     "10": [
@@ -3338,25 +3898,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s4_60keV_th3cm",
-        "sample": "S4",
-        "energy_kev": 60,
-        "energy_mev": 0.06,
+        "job_name": "s1_50keV_th3cm",
+        "sample": "S1",
+        "energy_kev": 50,
+        "energy_mev": 0.05,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s2_400keV_th2cm",
+        "job_name": "s2_300keV_th2.5cm",
         "sample": "S2",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
-        "thickness_cm": 2.0
+        "energy_kev": 300,
+        "energy_mev": 0.3,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s8_40keV_th1cm",
-        "sample": "S8",
-        "energy_kev": 40,
-        "energy_mev": 0.04,
-        "thickness_cm": 1.0
+        "job_name": "s7_60keV_th1.5cm",
+        "sample": "S7",
+        "energy_kev": 60,
+        "energy_mev": 0.06,
+        "thickness_cm": 1.5
       }
     ],
     "11": [
@@ -3368,25 +3928,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s4_100keV_th3cm",
-        "sample": "S4",
-        "energy_kev": 100,
-        "energy_mev": 0.1,
+        "job_name": "s1_80keV_th3cm",
+        "sample": "S1",
+        "energy_kev": 80,
+        "energy_mev": 0.08,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s2_200keV_th2cm",
+        "job_name": "s2_500keV_th2.5cm",
         "sample": "S2",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 2.0
+        "energy_kev": 500,
+        "energy_mev": 0.5,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s8_600keV_th1cm",
-        "sample": "S8",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
-        "thickness_cm": 1.0
+        "job_name": "s7_300keV_th1.5cm",
+        "sample": "S7",
+        "energy_kev": 300,
+        "energy_mev": 0.3,
+        "thickness_cm": 1.5
       }
     ],
     "12": [
@@ -3398,25 +3958,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s4_300keV_th3cm",
-        "sample": "S4",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
+        "job_name": "s8_100keV_th3cm",
+        "sample": "S8",
+        "energy_kev": 100,
+        "energy_mev": 0.1,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s2_80keV_th2cm",
+        "job_name": "s2_800keV_th2.5cm",
         "sample": "S2",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 2.0
+        "energy_kev": 800,
+        "energy_mev": 0.8,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s8_300keV_th1cm",
-        "sample": "S8",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
-        "thickness_cm": 1.0
+        "job_name": "s4_50keV_th1.5cm",
+        "sample": "S4",
+        "energy_kev": 50,
+        "energy_mev": 0.05,
+        "thickness_cm": 1.5
       }
     ],
     "13": [
@@ -3428,25 +3988,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s2_60keV_th3cm",
-        "sample": "S2",
-        "energy_kev": 60,
-        "energy_mev": 0.06,
+        "job_name": "s8_15keV_th3cm",
+        "sample": "S8",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s2_50keV_th2cm",
+        "job_name": "s2_50keV_th2.5cm",
         "sample": "S2",
         "energy_kev": 50,
         "energy_mev": 0.05,
-        "thickness_cm": 2.0
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s8_100keV_th1cm",
-        "sample": "S8",
-        "energy_kev": 100,
-        "energy_mev": 0.1,
-        "thickness_cm": 1.0
+        "job_name": "s4_80keV_th1.5cm",
+        "sample": "S4",
+        "energy_kev": 80,
+        "energy_mev": 0.08,
+        "thickness_cm": 1.5
       }
     ],
     "14": [
@@ -3458,25 +4018,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s4_30keV_th3cm",
-        "sample": "S4",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
+        "job_name": "s1_400keV_th3cm",
+        "sample": "S1",
+        "energy_kev": 400,
+        "energy_mev": 0.4,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s3_40keV_th2cm",
+        "job_name": "s3_600keV_th2.5cm",
         "sample": "S3",
-        "energy_kev": 40,
-        "energy_mev": 0.04,
-        "thickness_cm": 2.0
+        "energy_kev": 600,
+        "energy_mev": 0.6,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s8_80keV_th0.8cm",
-        "sample": "S8",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 0.8
+        "job_name": "s4_200keV_th1.5cm",
+        "sample": "S4",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
+        "thickness_cm": 1.5
       }
     ],
     "15": [
@@ -3488,25 +4048,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s2_40keV_th3cm",
-        "sample": "S2",
-        "energy_kev": 40,
-        "energy_mev": 0.04,
+        "job_name": "s3_20keV_th3cm",
+        "sample": "S3",
+        "energy_kev": 20,
+        "energy_mev": 0.02,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s3_60keV_th2cm",
+        "job_name": "s3_400keV_th2.5cm",
         "sample": "S3",
-        "energy_kev": 60,
-        "energy_mev": 0.06,
-        "thickness_cm": 2.0
+        "energy_kev": 400,
+        "energy_mev": 0.4,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s6_50keV_th0.8cm",
-        "sample": "S6",
-        "energy_kev": 50,
-        "energy_mev": 0.05,
-        "thickness_cm": 0.8
+        "job_name": "s4_400keV_th1.5cm",
+        "sample": "S4",
+        "energy_kev": 400,
+        "energy_mev": 0.4,
+        "thickness_cm": 1.5
       }
     ],
     "16": [
@@ -3518,25 +4078,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s4_40keV_th3cm",
-        "sample": "S4",
-        "energy_kev": 40,
-        "energy_mev": 0.04,
+        "job_name": "s2_15keV_th3cm",
+        "sample": "S2",
+        "energy_kev": 15,
+        "energy_mev": 0.015,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s3_800keV_th2cm",
+        "job_name": "s3_200keV_th2.5cm",
         "sample": "S3",
-        "energy_kev": 800,
-        "energy_mev": 0.8,
-        "thickness_cm": 2.0
+        "energy_kev": 200,
+        "energy_mev": 0.2,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s7_50keV_th0.8cm",
-        "sample": "S7",
-        "energy_kev": 50,
-        "energy_mev": 0.05,
-        "thickness_cm": 0.8
+        "job_name": "s8_300keV_th1.5cm",
+        "sample": "S8",
+        "energy_kev": 300,
+        "energy_mev": 0.3,
+        "thickness_cm": 1.5
       }
     ],
     "17": [
@@ -3548,25 +4108,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s2_100keV_th3cm",
-        "sample": "S2",
-        "energy_kev": 100,
-        "energy_mev": 0.1,
+        "job_name": "s1_600keV_th3cm",
+        "sample": "S1",
+        "energy_kev": 600,
+        "energy_mev": 0.6,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s3_500keV_th2cm",
+        "job_name": "s3_80keV_th2.5cm",
         "sample": "S3",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
-        "thickness_cm": 2.0
+        "energy_kev": 80,
+        "energy_mev": 0.08,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s7_200keV_th0.8cm",
-        "sample": "S7",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 0.8
+        "job_name": "s2_50keV_th1.5cm",
+        "sample": "S2",
+        "energy_kev": 50,
+        "energy_mev": 0.05,
+        "thickness_cm": 1.5
       }
     ],
     "18": [
@@ -3578,25 +4138,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s8_40keV_th3cm",
+        "job_name": "s8_300keV_th3cm",
         "sample": "S8",
-        "energy_kev": 40,
-        "energy_mev": 0.04,
+        "energy_kev": 300,
+        "energy_mev": 0.3,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s3_100keV_th2cm",
+        "job_name": "s3_50keV_th2.5cm",
         "sample": "S3",
-        "energy_kev": 100,
-        "energy_mev": 0.1,
-        "thickness_cm": 2.0
+        "energy_kev": 50,
+        "energy_mev": 0.05,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s7_400keV_th0.8cm",
-        "sample": "S7",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
-        "thickness_cm": 0.8
+        "job_name": "s5_40keV_th1.5cm",
+        "sample": "S5",
+        "energy_kev": 40,
+        "energy_mev": 0.04,
+        "thickness_cm": 1.5
       }
     ],
     "19": [
@@ -3608,25 +4168,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s8_500keV_th3cm",
-        "sample": "S8",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
+        "job_name": "s1_200keV_th3cm",
+        "sample": "S1",
+        "energy_kev": 200,
+        "energy_mev": 0.2,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s3_300keV_th2cm",
-        "sample": "S3",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
-        "thickness_cm": 2.0
+        "job_name": "s5_30keV_th2.5cm",
+        "sample": "S5",
+        "energy_kev": 30,
+        "energy_mev": 0.03,
+        "thickness_cm": 2.5
       },
       {
-        "job_name": "s7_600keV_th0.8cm",
-        "sample": "S7",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
-        "thickness_cm": 0.8
+        "job_name": "s5_60keV_th1.5cm",
+        "sample": "S5",
+        "energy_kev": 60,
+        "energy_mev": 0.06,
+        "thickness_cm": 1.5
       }
     ],
     "20": [
@@ -3638,627 +4198,25 @@
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s8_60keV_th3cm",
-        "sample": "S8",
-        "energy_kev": 60,
-        "energy_mev": 0.06,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s5_30keV_th2cm",
-        "sample": "S5",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
-        "thickness_cm": 2.0
-      },
-      {
-        "job_name": "s7_80keV_th0.8cm",
-        "sample": "S7",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 0.8
-      }
-    ]
-  },
-  "1983huehao": {
-    "1": [
-      {
-        "job_name": "s7_600keV_th3cm",
-        "sample": "S7",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s6_20keV_th3cm",
-        "sample": "S6",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s5_80keV_th2cm",
-        "sample": "S5",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 2.0
-      },
-      {
-        "job_name": "s8_50keV_th0.8cm",
-        "sample": "S8",
+        "job_name": "s3_50keV_th3cm",
+        "sample": "S3",
         "energy_kev": 50,
         "energy_mev": 0.05,
-        "thickness_cm": 0.8
-      }
-    ],
-    "2": [
-      {
-        "job_name": "s7_30keV_th3cm",
-        "sample": "S7",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
         "thickness_cm": 3.0
       },
       {
-        "job_name": "s3_30keV_th3cm",
-        "sample": "S3",
-        "energy_kev": 30,
-        "energy_mev": 0.03,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s6_40keV_th2cm",
+        "job_name": "s6_800keV_th2.5cm",
         "sample": "S6",
-        "energy_kev": 40,
-        "energy_mev": 0.04,
-        "thickness_cm": 2.0
-      },
-      {
-        "job_name": "s8_200keV_th0.8cm",
-        "sample": "S8",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 0.8
-      }
-    ],
-    "3": [
-      {
-        "job_name": "s7_500keV_th3cm",
-        "sample": "S7",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s6_400keV_th2.5cm",
-        "sample": "S6",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s2_600keV_th2.5cm",
-        "sample": "S2",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s8_400keV_th0.8cm",
-        "sample": "S8",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
-        "thickness_cm": 0.8
-      }
-    ],
-    "4": [
-      {
-        "job_name": "s4_80keV_th3cm",
-        "sample": "S4",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s1_800keV_th2.5cm",
-        "sample": "S1",
         "energy_kev": 800,
         "energy_mev": 0.8,
         "thickness_cm": 2.5
       },
       {
-        "job_name": "s2_200keV_th2.5cm",
-        "sample": "S2",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s6_200keV_th0.8cm",
-        "sample": "S6",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 0.8
-      }
-    ],
-    "5": [
-      {
-        "job_name": "s4_200keV_th3cm",
-        "sample": "S4",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s8_400keV_th2.5cm",
-        "sample": "S8",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s2_80keV_th2.5cm",
-        "sample": "S2",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s6_600keV_th0.8cm",
-        "sample": "S6",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
-        "thickness_cm": 0.8
-      }
-    ],
-    "6": [
-      {
-        "job_name": "s7_400keV_th3cm",
-        "sample": "S7",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s8_80keV_th2.5cm",
-        "sample": "S8",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s4_400keV_th2.5cm",
-        "sample": "S4",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s6_400keV_th0.8cm",
-        "sample": "S6",
-        "energy_kev": 400,
-        "energy_mev": 0.4,
-        "thickness_cm": 0.8
-      }
-    ],
-    "7": [
-      {
-        "job_name": "s7_50keV_th3cm",
-        "sample": "S7",
-        "energy_kev": 50,
-        "energy_mev": 0.05,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s8_200keV_th2.5cm",
-        "sample": "S8",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s6_100keV_th2.5cm",
-        "sample": "S6",
-        "energy_kev": 100,
-        "energy_mev": 0.1,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s6_80keV_th0.8cm",
-        "sample": "S6",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 0.8
-      }
-    ],
-    "8": [
-      {
-        "job_name": "s5_300keV_th3cm",
+        "job_name": "s5_300keV_th1.5cm",
         "sample": "S5",
         "energy_kev": 300,
         "energy_mev": 0.3,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s6_600keV_th2.5cm",
-        "sample": "S6",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s6_60keV_th2.5cm",
-        "sample": "S6",
-        "energy_kev": 60,
-        "energy_mev": 0.06,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s8_600keV_th0.8cm",
-        "sample": "S8",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
-        "thickness_cm": 0.8
-      }
-    ],
-    "9": [
-      {
-        "job_name": "s6_15keV_th3cm",
-        "sample": "S6",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s8_600keV_th2.5cm",
-        "sample": "S8",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s6_40keV_th2.5cm",
-        "sample": "S6",
-        "energy_kev": 40,
-        "energy_mev": 0.04,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s1_15keV_th0.3cm",
-        "sample": "S1",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 0.3
-      }
-    ],
-    "10": [
-      {
-        "job_name": "s5_800keV_th3cm",
-        "sample": "S5",
-        "energy_kev": 800,
-        "energy_mev": 0.8,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s6_200keV_th2.5cm",
-        "sample": "S6",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s4_600keV_th2.5cm",
-        "sample": "S4",
-        "energy_kev": 600,
-        "energy_mev": 0.6,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s6_15keV_th0.3cm",
-        "sample": "S6",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 0.3
-      }
-    ],
-    "11": [
-      {
-        "job_name": "s6_800keV_th3cm",
-        "sample": "S6",
-        "energy_kev": 800,
-        "energy_mev": 0.8,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s7_20keV_th2.5cm",
-        "sample": "S7",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s4_50keV_th2.5cm",
-        "sample": "S4",
-        "energy_kev": 50,
-        "energy_mev": 0.05,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s5_15keV_th0.3cm",
-        "sample": "S5",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 0.3
-      }
-    ],
-    "12": [
-      {
-        "job_name": "s6_300keV_th3cm",
-        "sample": "S6",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s6_20keV_th2.5cm",
-        "sample": "S6",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s4_80keV_th2.5cm",
-        "sample": "S4",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s8_15keV_th0.3cm",
-        "sample": "S8",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 0.3
-      }
-    ],
-    "13": [
-      {
-        "job_name": "s6_500keV_th3cm",
-        "sample": "S6",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s7_60keV_th2.5cm",
-        "sample": "S7",
-        "energy_kev": 60,
-        "energy_mev": 0.06,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s4_200keV_th2.5cm",
-        "sample": "S4",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s2_15keV_th0.3cm",
-        "sample": "S2",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 0.3
-      }
-    ],
-    "14": [
-      {
-        "job_name": "s6_60keV_th3cm",
-        "sample": "S6",
-        "energy_kev": 60,
-        "energy_mev": 0.06,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s7_100keV_th2.5cm",
-        "sample": "S7",
-        "energy_kev": 100,
-        "energy_mev": 0.1,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s8_100keV_th2.5cm",
-        "sample": "S8",
-        "energy_kev": 100,
-        "energy_mev": 0.1,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s4_15keV_th0.3cm",
-        "sample": "S4",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 0.3
-      }
-    ],
-    "15": [
-      {
-        "job_name": "s5_500keV_th3cm",
-        "sample": "S5",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s7_300keV_th2.5cm",
-        "sample": "S7",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s8_800keV_th2.5cm",
-        "sample": "S8",
-        "energy_kev": 800,
-        "energy_mev": 0.8,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s7_15keV_th0.3cm",
-        "sample": "S7",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 0.3
-      }
-    ],
-    "16": [
-      {
-        "job_name": "s6_40keV_th3cm",
-        "sample": "S6",
-        "energy_kev": 40,
-        "energy_mev": 0.04,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s7_500keV_th2.5cm",
-        "sample": "S7",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s8_500keV_th2.5cm",
-        "sample": "S8",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s1_15keV_th0.1cm",
-        "sample": "S1",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 0.1
-      }
-    ],
-    "17": [
-      {
-        "job_name": "s6_80keV_th3cm",
-        "sample": "S6",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s1_500keV_th2.5cm",
-        "sample": "S1",
-        "energy_kev": 500,
-        "energy_mev": 0.5,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s6_15keV_th2.5cm",
-        "sample": "S6",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s3_15keV_th0.1cm",
-        "sample": "S3",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 0.1
-      }
-    ],
-    "18": [
-      {
-        "job_name": "s5_50keV_th3cm",
-        "sample": "S5",
-        "energy_kev": 50,
-        "energy_mev": 0.05,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s1_300keV_th2.5cm",
-        "sample": "S1",
-        "energy_kev": 300,
-        "energy_mev": 0.3,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s3_40keV_th2.5cm",
-        "sample": "S3",
-        "energy_kev": 40,
-        "energy_mev": 0.04,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s5_15keV_th0.1cm",
-        "sample": "S5",
-        "energy_kev": 15,
-        "energy_mev": 0.015,
-        "thickness_cm": 0.1
-      }
-    ],
-    "19": [
-      {
-        "job_name": "s5_80keV_th3cm",
-        "sample": "S5",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s6_80keV_th2.5cm",
-        "sample": "S6",
-        "energy_kev": 80,
-        "energy_mev": 0.08,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s5_60keV_th2.5cm",
-        "sample": "S5",
-        "energy_kev": 60,
-        "energy_mev": 0.06,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s3_20keV_th0.1cm",
-        "sample": "S3",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
-        "thickness_cm": 0.1
-      }
-    ],
-    "20": [
-      {
-        "job_name": "s5_200keV_th3cm",
-        "sample": "S5",
-        "energy_kev": 200,
-        "energy_mev": 0.2,
-        "thickness_cm": 3.0
-      },
-      {
-        "job_name": "s6_50keV_th2.5cm",
-        "sample": "S6",
-        "energy_kev": 50,
-        "energy_mev": 0.05,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s5_100keV_th2.5cm",
-        "sample": "S5",
-        "energy_kev": 100,
-        "energy_mev": 0.1,
-        "thickness_cm": 2.5
-      },
-      {
-        "job_name": "s1_20keV_th0.1cm",
-        "sample": "S1",
-        "energy_kev": 20,
-        "energy_mev": 0.02,
-        "thickness_cm": 0.1
+        "thickness_cm": 1.5
       }
     ]
   }
